@@ -215,53 +215,82 @@
   .hero-question::before { font-size: 52px; }
 }
 
-/* 特徴2点：エディトリアル風2カラム */
+/* 特徴2点：カチッとしたカードデザイン */
 .hero-features {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0;
-  margin-bottom: 40px;
-  border-top: 1px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  gap: 14px;
+  margin: 32px 0 40px;
 }
 @media (min-width: 640px) {
-  .hero-features { grid-template-columns: 1fr 1fr; }
+  .hero-features { grid-template-columns: 1fr 1fr; gap: 18px; }
 }
+
 .hero-feature {
-  padding: 20px 0;
+  background: var(--paper-light);
+  border: 1.5px solid var(--ink);
+  padding: 24px 22px 26px;
   position: relative;
+  transition: all .3s ease;
 }
-.hero-feature + .hero-feature {
-  border-top: 1px solid var(--line-mid);
-}
-@media (min-width: 640px) {
-  .hero-feature { padding: 26px 26px 26px 0; }
-  .hero-feature + .hero-feature {
-    border-top: none;
-    border-left: 1px solid var(--ink);
-    padding-left: 26px;
+@media (min-width: 1024px) {
+  .hero-feature:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0 var(--ink);
   }
 }
+
+/* 巨大ナンバー */
 .hero-feature .feat-num {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--vermillion);
+  line-height: 0.85;
+  margin-bottom: 6px;
+  display: block;
+}
+@media (min-width: 640px) {
+  .hero-feature .feat-num { font-size: 56px; }
+}
+
+/* SPEED / COVERAGE ラベル */
+.hero-feature .feat-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  letter-spacing: 0.25em;
-  color: var(--vermillion);
-  margin-bottom: 10px;
+  letter-spacing: 0.28em;
+  color: var(--ink);
   font-weight: 600;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ink);
+  text-transform: uppercase;
+  display: block;
 }
+
+/* タイトル */
 .hero-feature h3 {
   font-family: 'Shippori Mincho B1', serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--ink);
-  margin-bottom: 8px;
-  line-height: 1.5;
+  margin-bottom: 10px;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
 }
+@media (min-width: 640px) {
+  .hero-feature h3 { font-size: 20px; }
+}
+
+/* 説明文 */
 .hero-feature p {
   font-size: 13px;
-  line-height: 1.85;
+  line-height: 1.9;
   color: var(--text-sub);
+}
+@media (min-width: 640px) {
+  .hero-feature p { font-size: 13.5px; }
 }
 
 /* CTAボタン */
