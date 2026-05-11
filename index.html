@@ -49,46 +49,23 @@
 
   <div class="container">
 
-    <!-- ヘッダーストリップ：日付・図番号など -->
+    <!-- ヘッダーストリップ -->
     <div class="hero-strip">
       <div class="left">FIG. 01 ／ HERO ／ DRAWN BY T.TSUJI</div>
       <div class="right">SCALE 1:1</div>
     </div>
 
-    <!-- ロゴ -->
-    <div class="hero-brand">
-      <div class="mark">CHIKUDEN L<span class="v">A</span>BO</div>
-      <div class="tag">by SOLAR &amp; BATTERY  ／  est. 2026</div>
-    </div>
+    <!-- メインビジュアル（ロゴ・メインコピー・サブコピー入り画像） -->
+    <picture>
+      <source media="(min-width: 1024px)" srcset="images/hero-pc.webp">
+      <img src="images/hero-sp.webp" alt="CHIKUDEN LABO ／ 暮らしの安心をアップデートする。" class="hero-main-img">
+    </picture>
 
-    <!-- メイン部分：見出し ＋ 縦書きキャプション -->
-    <div class="hero-main">
-      <div>
-        <h1 class="hero-headline">
-          暮らしの<span class="under">安心</span>を、<br>
-          <span class="v">アップデート</span>する。
-        </h1>
-      </div>
-      <!-- 縦書きキャプション（PCのみ表示） -->
-      <div class="hero-vertical">
-        <p>もう、<span class="v">「万が一」</span>が「万が一」じゃない時代。</p>
-      </div>
+    <!-- ビジュアル直下の注釈 -->
+    <div class="hero-caption">
+      <div>FIG. 01-A ／ INSTALLATION EXAMPLE</div>
+      <div class="right">● REFERENCE IMAGE</div>
     </div>
-
-    <!-- サブコピー -->
-    <div class="hero-subline">
-      <div class="label">PROBLEM STATEMENT</div>
-      <p>
-        <strong>●●を備えていますか？</strong><br>
-        もはや、<span class="v">「万が一」が「万が一」じゃない</span>時代。
-      </p>
-    </div>
-
-    <!-- 訴求の問い -->
-    <p class="hero-question">
-      今やるべきこととは？<br>
-      安心への備えを、真剣に考えてみませんか？
-    </p>
 
     <!-- 特徴2点 -->
     <div class="hero-features">
@@ -110,36 +87,8 @@
       <button class="btn-secondary" data-scroll="plans">プランを見る</button>
     </div>
 
-    <!-- メインビジュアル -->
-    <div class="hero-visual">
-      <div class="webp" data-aspect="16/9">
-        <div class="webp-icon"></div>
-        <div class="webp-desc">メインビジュアル：マンション or 一戸建てのバルコニーにソーラーパネル＋蓄電池が設置された、スピード感あるイメージ</div>
-        <div class="webp-sub">HERO · 1600×900</div>
-      </div>
-      <div class="sub-stack">
-        <div class="webp" data-aspect="3/2">
-          <div class="webp-icon"></div>
-          <div class="webp-desc">マンション バルコニー設置例</div>
-          <div class="webp-sub">800×533</div>
-        </div>
-        <div class="webp" data-aspect="3/2">
-          <div class="webp-icon"></div>
-          <div class="webp-desc">小規模店舗・事業所イメージ</div>
-          <div class="webp-sub">800×533</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ビジュアル直下の注釈 -->
-    <div class="hero-caption">
-      <div>FIG. 01-A ／ INSTALLATION EXAMPLE</div>
-      <div class="right">● REFERENCE IMAGE</div>
-    </div>
-
   </div>
 </section>
-
 
 <!-- =====================================================
      ★ Section 02 ／ TARGET ＝ ターゲット

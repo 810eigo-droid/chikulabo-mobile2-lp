@@ -2302,3 +2302,16 @@
   line-height: 1.7;
   letter-spacing: 0.05em;
 }
+
+/* HERO画像の差し替え用 */
+.hero picture {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+}
+.hero-main-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--ink);
+}
