@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHIKUDEN LABO ｜ チクデンラボ — 暮らしの安心をアップデートする。</title>
+<meta name="description" content="もはや、万が一が万が一じゃない時代。CHIKUDEN LABOは、建築士が設計するエネルギーBCPコンサルティング。">
+
+<!-- ===== Google Fonts ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Bodoni+Moda:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ===== CSS ===== -->
+<link rel="stylesheet" href="css/01-base.css">
+<link rel="stylesheet" href="css/02-layout.css">
+<link rel="stylesheet" href="css/03-sections.css">
+</head>
+<body>
+
+
+<!-- =====================================================
+     固定トップバー
+     ===================================================== -->
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-main">CHIKUDEN L<span class="v">A</span>BO</span>
+    <span class="brand-sub">EST. 2026</span>
+  </div>
+  <div class="contact">
+    <div class="contact-tel">
+      000-0000-0000
+      <small>MON-FRI 9:00-18:00</small>
+    </div>
+    <button class="btn-cta" data-scroll="contact">無料相談</button>
+  </div>
+</header>
+
+
+<!-- =====================================================
+     ★ Section 01 ／ HERO ＝ ファーストビュー
+     ===================================================== -->
+<section class="hero blueprint-grid">
+  <!-- 製図用紙の四隅・十字マーク -->
+  <div class="crosshair tl"></div>
+  <div class="crosshair tr"></div>
+  <div class="crosshair bl"></div>
+  <div class="crosshair br"></div>
+
+  <div class="container">
+
+    <!-- ヘッダーストリップ：日付・図番号など -->
+    <div class="hero-strip">
+      <div class="left">FIG. 01 ／ HERO ／ DRAWN BY T.TSUJI</div>
+      <div class="right">SCALE 1:1</div>
+    </div>
+
+    <!-- ロゴ -->
+    <div class="hero-brand">
+      <div class="mark">CHIKUDEN L<span class="v">A</span>BO</div>
+      <div class="tag">by SOLAR &amp; BATTERY  ／  est. 2026</div>
+    </div>
+
+    <!-- メイン部分：見出し ＋ 縦書きキャプション -->
+    <div class="hero-main">
+      <div>
+        <h1 class="hero-headline">
+          暮らしの<span class="under">安心</span>を、<br>
+          <span class="v">アップデート</span>する。
+        </h1>
+      </div>
+      <!-- 縦書きキャプション（PCのみ表示） -->
+      <div class="hero-vertical">
+        <p>もう、<span class="v">「万が一」</span>が「万が一」じゃない時代。</p>
+      </div>
+    </div>
+
+    <!-- サブコピー -->
+    <div class="hero-subline">
+      <div class="label">PROBLEM STATEMENT</div>
+      <p>
+        <strong>●●を備えていますか？</strong><br>
+        もはや、<span class="v">「万が一」が「万が一」じゃない</span>時代。
+      </p>
+    </div>
+
+    <!-- 訴求の問い -->
+    <p class="hero-question">
+      今やるべきこととは？<br>
+      安心への備えを、真剣に考えてみませんか？
+    </p>
+
+    <!-- 特徴2点 -->
+    <div class="hero-features">
+      <div class="hero-feature">
+        <div class="feat-num">01 ／ SPEED</div>
+        <h3>簡単・スピーディな実装</h3>
+        <p>蓄電池システムを、あなたのライフスタイルや事業スタイルから設計します。</p>
+      </div>
+      <div class="hero-feature">
+        <div class="feat-num">02 ／ COVERAGE</div>
+        <h3>幅広い対応範囲</h3>
+        <p>一戸建てからマンション、小規模事業所から店舗まで、住空間を選びません。</p>
+      </div>
+    </div>
+
+    <!-- CTAボタン -->
+    <div class="hero-ctas">
+      <button class="btn-primary" data-scroll="contact">無料相談を申し込む</button>
+      <button class="btn-secondary" data-scroll="plans">プランを見る</button>
+    </div>
+
+    <!-- メインビジュアル -->
+    <div class="hero-visual">
+      <div class="webp" data-aspect="16/9">
+        <div class="webp-icon"></div>
+        <div class="webp-desc">メインビジュアル：マンション or 一戸建てのバルコニーにソーラーパネル＋蓄電池が設置された、スピード感あるイメージ</div>
+        <div class="webp-sub">HERO · 1600×900</div>
+      </div>
+      <div class="sub-stack">
+        <div class="webp" data-aspect="3/2">
+          <div class="webp-icon"></div>
+          <div class="webp-desc">マンション バルコニー設置例</div>
+          <div class="webp-sub">800×533</div>
+        </div>
+        <div class="webp" data-aspect="3/2">
+          <div class="webp-icon"></div>
+          <div class="webp-desc">小規模店舗・事業所イメージ</div>
+          <div class="webp-sub">800×533</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ビジュアル直下の注釈 -->
+    <div class="hero-caption">
+      <div>FIG. 01-A ／ INSTALLATION EXAMPLE</div>
+      <div class="right">● REFERENCE IMAGE</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ★ Section 02 ／ TARGET ＝ ターゲット
+     ===================================================== -->
+<section class="target">
+  <div class="container">
+
+    <div class="target-header reveal">
+      <div class="target-label">02 ／ WHO IS THIS FOR?</div>
+      <div class="target-num">0<span class="v">2</span></div>
+      <h2 class="target-question">私のところは、大丈夫？</h2>
+      <p class="target-lead">
+        「自分には関係ない」と思っていませんか？<br>
+        特に以下のようなご家庭・事業所は、万が一の備えが <strong style="color:var(--vermillion);">特に必要</strong> です。
+      </p>
+    </div>
+
+    <!-- 4つのターゲットカード -->
+    <div class="target-cards">
+
+      <div class="target-card reveal">
+        <div class="card-head">
+          <div class="card-num">01</div>
+          <div class="card-tag">CASE A</div>
+        </div>
+        <div class="card-img">
+          <div class="webp" data-aspect="3/2">
+            <div class="webp-icon"></div>
+            <div class="webp-desc">最新家電・スマートホームの暮らし</div>
+            <div class="webp-sub">600×400</div>
+          </div>
+        </div>
+        <h3>設備が充実しているお宅</h3>
+        <div class="arrow-line">RISK / IMPACT</div>
+        <p>エアコン、最新家電、セキュリティ等が充実しているが故に、停電時はすべての機能が停止。最高の設備も役に立たず、シャッターが開かない、セキュリティ開放など、生活に支障が出ます。</p>
+      </div>
+
+      <div class="target-card reveal">
+        <div class="card-head">
+          <div class="card-num">02</div>
+          <div class="card-tag">CASE B</div>
+        </div>
+        <div class="card-img">
+          <div class="webp" data-aspect="3/2">
+            <div class="webp-icon"></div>
+            <div class="webp-desc">高齢者ご夫婦の暮らし</div>
+            <div class="webp-sub">600×400</div>
+          </div>
+        </div>
+        <h3>高齢者がいるお宅</h3>
+        <div class="arrow-line">HEALTH RISK</div>
+        <p>冷暖房が使えないのはもちろん、当たり前の生活ができなくなることでパニックに。部屋も真っ暗、音や情報が入らなくなり、孤独を感じます。不安や不自由さから体調不良につながる恐れも。</p>
+      </div>
+
+      <div class="target-card reveal">
+        <div class="card-head">
+          <div class="card-num">03</div>
+          <div class="card-tag">CASE C</div>
+        </div>
+        <div class="card-img">
+          <div class="webp" data-aspect="3/2">
+            <div class="webp-icon"></div>
+            <div class="webp-desc">ペットと暮らす家庭</div>
+            <div class="webp-sub">600×400</div>
+          </div>
+        </div>
+        <h3>ペットがお留守番している</h3>
+        <div class="arrow-line">LIFE-CRITICAL</div>
+        <p>空調管理ができなくなることで、ペットの生命の危機に直結します。照明や音声が途切れることで、じっとしていられなくなり、いろんなものが壊れたりもします。</p>
+      </div>
+
+      <div class="target-card reveal">
+        <div class="card-head">
+          <div class="card-num">04</div>
+          <div class="card-tag">CASE D</div>
+        </div>
+        <div class="card-img">
+          <div class="webp" data-aspect="3/2">
+            <div class="webp-icon"></div>
+            <div class="webp-desc">小規模店舗・住宅併用事業所</div>
+            <div class="webp-sub">600×400</div>
+          </div>
+        </div>
+        <h3>住宅併用の店舗や小規模事業所</h3>
+        <div class="arrow-line">BUSINESS RISK</div>
+        <p>停電により、商品や在庫が駄目になる。事業継続に著しい影響が発生し、売上管理ができなくなったり、売上もストップ。住宅と一体型の店舗・事業所ほどダメージは大きい。</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ★ Section 03 ／ RISKS ＝ 万が一のリスク・０は０
+     ===================================================== -->
+<section class="risks blueprint-grid">
+  <div class="crosshair tl"></div>
+  <div class="crosshair br"></div>
+
+  <div class="container">
+
+    <div class="risks-header reveal">
+      <div class="dim-line" style="margin-bottom:14px;">03 ／ REAL RISKS</div>
+      <div class="num">0<span class="v">3</span></div>
+      <h2 class="risks-headline">
+        今の時代は、もう「万が一」が<br>
+        <span class="v">珍しくない。</span>
+      </h2>
+      <p class="risks-lead">
+        私たちの暮らし・事業を止める要因は、いまや決して珍しいものではありません。3つのリアルなシナリオが、すぐそこにあります。
+      </p>
+    </div>
+
+    <!-- 3つのリスク -->
+    <div class="risk-grid">
+
+      <div class="risk-card reveal">
+        <div class="risk-head">
+          <div class="risk-num">01</div>
+          <div class="risk-tag">災害 ／ NATURAL</div>
+        </div>
+        <div class="risk-img">
+          <div class="webp" data-aspect="4/3">
+            <div class="webp-icon"></div>
+            <div class="webp-desc">台風・地震・暴風雨など災害イメージ</div>
+            <div class="webp-sub">800×600</div>
+          </div>
+        </div>
+        <h4>災害による電力停止</h4>
+        <p>地震や台風による電柱倒壊などで、復旧に数日〜1週間かかることも。広域停電は地域全体に影響します。</p>
+      </div>
+
+      <div class="risk-card reveal">
+        <div class="risk-head">
+          <div class="risk-num">02</div>
+          <div class="risk-tag">事故 ／ ACCIDENT</div>
+        </div>
+        <div class="risk-img">
+          <div class="webp" data-aspect="4/3">
+            <div class="webp-icon"></div>
+            <div class="webp-desc">電柱事故・電力消費過多イメージ</div>
+            <div class="webp-sub">800×600</div>
+          </div>
+        </div>
+        <h4>トラブルによる停電</h4>
+        <p>交通事故による電柱破損や、夏場の電力消費過多による停電・調整。原因は災害だけではありません。</p>
+      </div>
+
+      <div class="risk-card reveal">
+        <div class="risk-head">
+          <div class="risk-num">03</div>
+          <div class="risk-tag">経済 ／ ECONOMIC</div>
+        </div>
+        <div class="risk-img">
+          <div class="webp" data-aspect="4/3">
+            <div class="webp-icon"></div>
+            <div class="webp-desc">電気代高騰のニュース・グラフ</div>
+            <div class="webp-sub">800×600</div>
+          </div>
+        </div>
+        <h4>電気代の高騰</h4>
+        <p>世界的な経済事情（戦争など）により、電気代は10数年で最大1.5倍近く値上げ。2026年以降はさらなる高騰が予想されます。</p>
+      </div>
+
+    </div>
+
+    <!-- 影響セクション -->
+    <div class="impact-row reveal">
+      <div class="impact-label">REAL CONSEQUENCES ／ 引き起こされる影響</div>
+      <h3>停電が引き起こす、主な影響。</h3>
+      <div class="impact-list">
+        <div class="impact-item">
+          <div class="impact-num">i.</div>
+          <h4>通信・データの遮断</h4>
+          <p>スマホ電池切れ後の充電不可、Wi-Fi停止、セキュリティ停止、決済・在庫管理停止。</p>
+        </div>
+        <div class="impact-item">
+          <div class="impact-num">ii.</div>
+          <h4>労働・生活環境の著しい低下</h4>
+          <p>エアコン停止による劣悪な環境、冷蔵庫の停止、送風機の停止。健康にも直結します。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ０は０ ブロック -->
+    <div class="zero-block reveal">
+      <div class="zero-inner">
+        <div class="zero-eyebrow">IMPACT ANALYSIS ／ 影響分析</div>
+        <h3 class="zero-headline">
+          準備しなければ、何も対応できない。<br>
+          ０は０にしかならない。
+        </h3>
+
+        <div class="zero-visual">
+          <div class="zero-big">0</div>
+          <div class="zero-eq">＝</div>
+          <div class="zero-big">0</div>
+        </div>
+
+        <div class="zero-labels">
+          <div class="lbl"><div class="k">PREPARATION</div><div class="v">準備　０</div></div>
+          <div class="lbl"><div class="k">PEACE OF MIND</div><div class="v">効果・安心　０</div></div>
+          <div class="lbl risk"><div class="k">RISK &amp; ANXIETY</div><div class="v">リスク・不安　100</div></div>
+        </div>
+
+        <p class="zero-message">
+          準備をしていなければ、安心も０、リスクや不安は１００。<br>
+          しかし、<strong>準備を少しでもやっておくこと</strong>で、リスクや不安は大幅に下がります。
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ★ Section 04 ／ BCP ＝ 解決策・エネルギーBCP設計
+     ===================================================== -->
+<section class="bcp">
+  <div class="container">
+
+    <div class="bcp-header reveal">
+      <div class="dim-line" style="margin-bottom:14px;">04 ／ OUR SOLUTION</div>
+      <div class="num">0<span class="v">4</span></div>
+      <h2 class="bcp-title">
+        家庭の <span class="v">エネルギーBCP設計</span>。
+      </h2>
+    </div>
+
+    <!-- 提案ヘッドラインボックス -->
+    <div class="bcp-headline-box reveal">
+      <div class="badge">OUR APPROACH</div>
+      <h3>
+        いきなり機器購入や設備を検討するのではなく、<br>
+        <em>ＢＣＰ設計から始めよう。</em>
+      </h3>
+    </div>
+
+    <!-- 避難所写真 -->
+    <div class="bcp-visual reveal">
+      <div class="webp" data-aspect="21/9">
+        <div class="webp-icon"></div>
+        <div class="webp-desc">避難所生活の写真（体育館・段ボール仕切りのリアルなイメージ）</div>
+        <div class="webp-sub">EVACUATION · 1680×720</div>
+      </div>
+      <div class="caption">
+        <div>FIG. 04-A ／ EVACUATION SHELTER</div>
+        <div class="right">● REFERENCE</div>
+      </div>
+    </div>
+
+    <!-- 本文 -->
+    <div class="bcp-body reveal">
+      <div class="bcp-text">
+        <p>BCPとは「Business Continuity Plan」の略で、企業が自然災害、大火災、テロ攻撃などの緊急事態に遭遇した場合に、事業資産の損害を最小限にとどめつつ、中核となる事業の継続あるいは早期復旧を可能とするために、平常時に行うべき活動や緊急時における事業継続のための方法、手段などを取り決めておく計画のこと。<strong>政府も推奨している事案です。</strong></p>
+        <p>これは会社に限らず、<strong>一般消費者の生活においても同じこと</strong>。大企業も本格的に準備を始めている今、一般家庭や小規模店舗・事業者にも備えが必要だと考えます。</p>
+        <p>万が一が起きてからでは、対応に何倍もの費用や時間がかかります。日本もそのうち、海外の後進国のように物資の奪い合いに巻き込まれる可能性もあります。</p>
+      </div>
+
+      <div class="bcp-callout">
+        <div class="label">REFERENCE ／ 中小企業庁HPより</div>
+        <h3>
+          <span class="latin">BUSINESS CONTINUITY PLAN</span>
+          BCP（事業継続計画）
+        </h3>
+        <p>緊急事態は突然発生します。有効な手を打てなければ、特に中小企業は、経営基盤の脆弱なため廃業に追い込まれるおそれがあります。平常時からBCPを周到に準備しておくことが、緊急時の事業継続・早期復旧の鍵となります。</p>
+      </div>
+    </div>
+
+    <!-- パンチライン -->
+    <div class="bcp-punch reveal">
+      <p>
+        「たった一晩だから」「すぐ復旧できるから」<br>
+        そう言われて、<em>何日も何日も</em>、<br>
+        学校の体育館で段ボールに囲まれて過ごせますか？
+      </p>
+      <p>
+        電気があるだけで、自宅で過ごせる可能性は <strong>高まります</strong>。<br>
+        だからこそ我々は、建物のポテンシャルと生活を最適化する<br>
+        「<strong>万が一の時のライフスタイルの見直し・設計</strong>」から始めます。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ★ Section 05 ／ MENU ＝ コンサルティング・プラン
+     ===================================================== -->
+<section class="menu" id="plans">
+  <div class="container">
+
+    <div class="menu-header reveal">
+      <div class="dim-line" style="margin-bottom:14px;">05 ／ CONSULTING &amp; PLANS</div>
+      <div class="num">0<span class="v">5</span></div>
+      <h2 class="title">
+        建築士の目線で分析する、<br>
+        <span class="v">バックアップモデル</span>。
+      </h2>
+      <div class="meta">DIAGNOSIS START ／ 診断調査からスタート ／ TAX INCLUDED</div>
+    </div>
+
+    <!-- 診断コース -->
+    <div class="diag-block">
+      <div class="diag-block-head reveal">
+        <div class="label">DIAGNOSIS MENU ／ 診断コース</div>
+        <h3>まずは「電気診断」から、<span class="v">段階的に</span>。</h3>
+      </div>
+
+      <div class="diag-courses">
+
+        <div class="diag-course reveal">
+          <span class="course-tier">ECONOMY</span>
+          <div class="price">10<span class="unit">万</span></div>
+          <div class="price-sub">TAX INCLUDED</div>
+          <h4>診断A<br>緊急時診断</h4>
+          <p>停電や災害時に「電気がどう止まるか」を可視化。最小限の出費で、我が家のリスクを明確化する入門コース。</p>
+          <div class="scope">SCOPE：電気 / 緊急時シナリオ</div>
+        </div>
+
+        <div class="diag-course featured reveal">
+          <span class="course-tier">STANDARD</span>
+          <div class="price">20<span class="unit">万</span></div>
+          <div class="price-sub">TAX INCLUDED</div>
+          <h4>診断B<br>A＋インフラ総合</h4>
+          <p>給排水・電気・換気・空調の4インフラを横断診断。ライフラインがどう連動して止まるかを設計レベルで分析。</p>
+          <div class="scope">SCOPE：給排水 / 電気 / 換気 / 空調</div>
+        </div>
+
+        <div class="diag-course reveal">
+          <span class="course-tier">FULL-SPEC</span>
+          <div class="price">30<span class="unit">万</span></div>
+          <div class="price-sub">TAX INCLUDED</div>
+          <h4>診断C<br>B＋建物診断</h4>
+          <p>建物本体の構造・劣化状況まで含めた包括診断。屋根の荷重・防水・開口部──住まい全体のレジリエンスを測定。</p>
+          <div class="scope">SCOPE：建物本体 + B全項目</div>
+        </div>
+
+      </div>
+
+      <div class="diag-note reveal">
+        <strong>※ 診断の専門家が実施します</strong>ので、他業者のように工事の見積もり・実施ありきでサービス（無料）では実施できかねます。診断は <strong>1級建築士または1級施工管理技士</strong> の資格を持つプロが、第3者の目線で担当。国家資格を持たない職人や営業マンが診断することはありません。当方は蓄電池やソーラーパネルの設置を強制営業しません。
+      </div>
+    </div>
+
+    <!-- バックアップ・プラン -->
+    <div class="plans-header reveal">
+      <div class="label">BACKUP PLANS ／ 3つの設置プラン</div>
+      <div class="small-title">想定する3つのバックアップ・モデル。</div>
+      <p>
+        概算金額です。各条件や要望によって変動するため、診断終了後にお客様の要望が具体的になってから正式な見積もりを提出します。条件の要素：蓄電池容量、太陽光パネルの容量、設置場所など。
+      </p>
+    </div>
+
+    <div class="plans">
+
+      <div class="plan reveal">
+        <span class="plan-tag">STARTER</span>
+        <div class="duration">2<span class="unit">時間</span></div>
+        <div class="plan-name">チクラボ スタータープラン</div>
+        <div class="plan-price"><span class="yen">¥</span>50〜100<span style="font-size:15px;">万</span></div>
+        <ul>
+          <li>最小構成で、まず導入</li>
+          <li>停電時の通信・照明確保</li>
+          <li>冷蔵庫の短時間バックアップ</li>
+          <li>後から増設可能</li>
+        </ul>
+      </div>
+
+      <div class="plan featured reveal">
+        <span class="plan-tag">RECOMMENDED</span>
+        <div class="duration">6<span class="unit">時間</span></div>
+        <div class="plan-name">チクラボ 生活持続プラン</div>
+        <div class="plan-price"><span class="yen">¥</span>100〜200<span style="font-size:15px;">万</span></div>
+        <ul>
+          <li>停電時の自動切替</li>
+          <li>冷蔵庫・通信・照明・空調を維持</li>
+          <li>使い方次第で12時間運用も可能</li>
+          <li>家族の暮らしの軸を止めない</li>
+        </ul>
+      </div>
+
+      <div class="plan reveal">
+        <span class="plan-tag">AUTONOMOUS</span>
+        <div class="duration">12<span class="unit">時間</span></div>
+        <div class="plan-name">チクラボ 自立プラン</div>
+        <div class="plan-price"><span class="yen">¥</span>200〜400<span style="font-size:15px;">万</span></div>
+        <ul>
+          <li>長時間バックアップに対応</li>
+          <li>夜通し、翌朝まで自宅で過ごせる</li>
+          <li>高齢者・ペット家庭の安心</li>
+          <li>ソーラー連携で実質24時間運用も</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 値引きマトリクス -->
+    <div class="discount-section reveal">
+      <div class="ds-label">SPECIAL DISCOUNT ／ 値引きマトリクス</div>
+      <h4>診断料金が、設置時に <em>最大10万円</em> まで割引！</h4>
+      <p class="ds-sub">
+        将来、各メニュー（チクラボメニュー）を設置される場合、診断費用が減額となります。<br>
+        最大で、診断費用の負担が <strong>0円</strong> に。
+      </p>
+
+      <!-- モバイル：カード型 -->
+      <div class="discount-cards">
+
+        <div class="discount-card">
+          <div class="plan-head">＋ チクラボ スタータープラン</div>
+          <div class="row"><span class="label">診断 エコノミー</span><span class="val">10万負担<small>値引無</small></span></div>
+          <div class="row"><span class="label">診断 スタンダード</span><span class="val">20万負担<small>値引無</small></span></div>
+          <div class="row"><span class="label">診断 フルスペック</span><span class="val">30万負担<small>値引無</small></span></div>
+        </div>
+
+        <div class="discount-card">
+          <div class="plan-head">＋ チクラボ 生活持続プラン</div>
+          <div class="row"><span class="label">診断 エコノミー</span><span class="val">5万負担<small>5万値引</small></span></div>
+          <div class="row"><span class="label">診断 スタンダード</span><span class="val">15万負担<small>5万値引</small></span></div>
+          <div class="row"><span class="label">診断 フルスペック</span><span class="val">25万負担<small>5万値引</small></span></div>
+        </div>
+
+        <div class="discount-card">
+          <div class="plan-head">＋ チクラボ 自立プラン</div>
+          <div class="row"><span class="label">診断 エコノミー</span><span class="val zero">0円負担<small>10万値引</small></span></div>
+          <div class="row"><span class="label">診断 スタンダード</span><span class="val">10万負担<small>10万値引</small></span></div>
+          <div class="row"><span class="label">診断 フルスペック</span><span class="val">20万負担<small>10万値引</small></span></div>
+        </div>
+
+      </div>
+
+      <!-- タブレット以上：テーブル -->
+      <div class="discount-table-wrap">
+        <table class="discount-table">
+          <thead>
+            <tr>
+              <th class="corner">　</th>
+              <th>診断<br>エコノミー<small>10万円</small></th>
+              <th>診断<br>スタンダード<small>20万円</small></th>
+              <th>診断<br>フルスペック<small>30万円</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>スタータープラン</th>
+              <td>10万負担<small>値引無</small></td>
+              <td>20万負担<small>値引無</small></td>
+              <td>30万負担<small>値引無</small></td>
+            </tr>
+            <tr>
+              <th>生活持続プラン</th>
+              <td>5万負担<small>5万値引</small></td>
+              <td>15万負担<small>5万値引</small></td>
+              <td>25万負担<small>5万値引</small></td>
+            </tr>
+            <tr>
+              <th>自立プラン</th>
+              <td class="zero">0円負担<small>10万値引</small></td>
+              <td>10万負担<small>10万値引</small></td>
+              <td>20万負担<small>10万値引</small></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- フッターメモ -->
+    <div class="plans-footer reveal">
+      ※ 最初に診断メニューのみのお申し込みをいただき、設置については別途契約となるため、<strong>設置を強制するものではありません。</strong><br>
+      ※ 使い方次第で、2時間のプランでも6時間、6時間のプランで12時間持たせることも可能。<br>
+      ※ 充電方法や電気の契約によって、より経済的な運用もご提案できます。日常の電気代削減のみを目的とする方には推奨できないプランです。
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ★ Section 06 ／ DIFF ＝ 他社との違い
+     ===================================================== -->
+<section class="diff blueprint-grid">
+  <div class="crosshair tl"></div>
+  <div class="crosshair br"></div>
+
+  <div class="container">
+
+    <div class="diff-header reveal">
+      <div class="dim-line" style="margin-bottom:14px;">06 ／ OUR DIFFERENCE</div>
+      <div class="num">0<span class="v">6</span></div>
+      <h2 class="diff-title">
+        他社製品との<br>
+        <span class="v">圧倒的な違い</span>。
+      </h2>
+    </div>
+
+    <p class="diff-lead reveal">
+      <em>改めて、診断は電気だけに限らず</em>、設備や建築も含めた専門家によるものです。世の中には似たような設備や提案がありますが、当社の <strong>設備に関する大きな違いは、以下の3つ</strong> です。
+    </p>
+
+    <!-- 3つの違い -->
+    <div class="diff-points">
+
+      <div class="diff-point reveal">
+        <div class="pt-num">
+          01
+          <small>POINT</small>
+        </div>
+        <div>
+          <h3>蓄電池の <em>増設が可能</em>。</h3>
+          <p>ソーラーの増設は一般的ですが、<strong>蓄電池を後から増設できる</strong>のが最大の特徴です。最初は少しセーブ気味に投資し、状況に応じて追加できます。さらに、取り外して別の場所で使うこともできます。</p>
+        </div>
+      </div>
+
+      <div class="diff-point reveal">
+        <div class="pt-num">
+          02
+          <small>POINT</small>
+        </div>
+        <div>
+          <h3>手続き・扱いが <em>簡単</em>。</h3>
+          <p>電圧が規制以下のため、電気工事士の免許がなくても、ご自身で取り外し・復旧が可能です。家庭用コンセントからそのまま電気が使えます（ポータブル電源のような危険なタコ足配線にはなりません）。一般的な蓄電池のように大掛かりな工事や電力会社への申請は不要です。</p>
+          <p class="note">※ DIYで素人で行うことは推奨しません。効率・安全・耐久面においては、専門家による施工を前提とします。</p>
+          <div class="use-cases">
+            <div class="use-case">バーベキュー・キャンプで使用</div>
+            <div class="use-case">工事現場・DIYで使用</div>
+            <div class="use-case">友達・家族に貸し出し可能</div>
+            <div class="use-case">車中泊のサブ電源にも</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="diff-point reveal">
+        <div class="pt-num">
+          03
+          <small>POINT</small>
+        </div>
+        <div>
+          <h3>国産メーカーで <em>安心</em>。</h3>
+          <p>安価な海外製ではなく、<strong>信頼の日本製</strong>にこだわっています。取扱説明書もサポートも、メーカーより適切に行える体制を整えています。長く使うエネルギー設備だからこそ、信頼の品質を選んでください。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MADE IN JAPAN バッジ -->
+    <div class="made-in-jp reveal">
+      <div class="badge">
+        <div class="latin">MADE IN</div>
+        <div class="ja">日本製</div>
+        <div class="sub">JAPAN QUALITY</div>
+      </div>
+      <div class="text">
+        <p>当社の扱う商品は、信頼の日本製。製品性能・耐久性・アフターサポート──すべての面で、長くお使いいただける品質を確保しています。万が一の時に「動かない」では困る、エネルギー設備だからこそ、<strong>信頼の国産にこだわります。</strong></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ★ Section 07 ／ PROFILE ＝ プロフィール
+     ───────────────────────────────────────
+     ・縦書きキャプション「これにかける、本気度。」
+     ・編集者風レイアウト
+     ===================================================== -->
+<section class="profile">
+  <div class="container">
+
+    <div class="profile-header reveal">
+      <div class="dim-line" style="margin-bottom:14px;">07 ／ PROFILE</div>
+      <div class="num">0<span class="v">7</span></div>
+      <h2 class="profile-title">
+        これにかける、<br>
+        <span class="v">本気度</span>を知ってください。
+      </h2>
+    </div>
+
+    <div class="profile-layout">
+
+      <!-- 左：ポートレート＋縦書きキャプション -->
+      <div class="profile-portrait reveal">
+        <div class="portrait-wrap">
+          <div class="webp" data-aspect="3/4">
+            <div class="webp-icon"></div>
+            <div class="webp-desc">代表 ツジタダトシ氏のポートレート<br>（建築士らしい落ち着いた雰囲気）</div>
+            <div class="webp-sub">PORTRAIT · 600×800</div>
+          </div>
+          <!-- 縦書き（PCのみ表示） -->
+          <div class="vert-caption">
+            建築 <span class="v">35年</span> ／ マンションのプロ
+          </div>
+        </div>
+        <div class="name-block">
+          <div class="role">REPRESENTATIVE ／ 代表</div>
+          <div class="name">ツジタダトシ</div>
+          <div class="name-en">TSUJI TADATOSHI</div>
+        </div>
+      </div>
+
+      <!-- 右：本文 -->
+      <div class="profile-body reveal">
+
+        <h3>プロフィール</h3>
+        <p class="lead-p">1級建築士であり、マンションから古民家、日本建築に至るまで、様々な建築の世界で活躍してきました。今もマンション業界に携わっており、<em>35年以上になるプロフェッショナル</em>です。</p>
+
+        <h3>きっかけと想い</h3>
+        <p><em>1997年の京都会議（COP3）</em>や東北の震災を機に、環境問題や既存建築物の価値向上に取り組んできました。もともと大型建築物の開発や設計を専門にしてきましたが、環境問題を意識し触れたことがきっかけです。</p>
+        <p>東北の震災をきっかけに、既存建築物の資産価値向上につながる活動や業務にシフトし、さらに環境への意識を高めて来ました。<em>2026年は戦争の影響もあって、建築業界に限らず社会そのものが大きな転換期</em>です。災害が各地で勃発する時代、自然災害はもちろん、人的災害も今後どんどん増えていきます。</p>
+        <p>私自身も創業30年。人が安心して生きていくための大きな要素となる事業を本格的にスタートすることとしました。<strong>長年顧問をしてきた大型マンションにおいては、数年前に災害により数日間電気が通らず、停電期間中に住民様が大変な思いをしたこと</strong>もきっかけです。専門家として何かサポートできないか？<strong>建築そのものは、電気があって価値をなすもの</strong>だと、改めて気づきました。</p>
+
+        <!-- 資格 -->
+        <div class="credentials">
+          <div class="cred-label">CREDENTIALS ／ 資格・役職</div>
+          <ul>
+            <li>1級建築士</li>
+            <li>宅地建物取引主任者試験合格</li>
+            <li>マンションリフォームマネージャー</li>
+            <li>増改築相談員</li>
+            <li>（一社）建物資産価値向上推進機構　代表理事</li>
+            <li>（一社）マンション管理相談センター　理事</li>
+          </ul>
+        </div>
+
+        <!-- 受賞歴 -->
+        <div class="awards">
+          <div class="aw-label">AWARDS ／ 受賞歴</div>
+          <p>愛知ゆとりある住まい協議会主催：わが家のリフォームコンクール</p>
+          <p><span class="star">●</span> H18年度　愛知県知事賞　受賞</p>
+          <p><span class="star">●</span> H20年度　特別賞　受賞</p>
+        </div>
+
+        <!-- 委員歴 -->
+        <div class="committees">
+          <div class="com-label">PUBLIC COMMITTEES ／ 委員歴</div>
+          <ul>
+            <li><span class="year">平成11–12</span>愛知県東郷町　夢創造街づくり委員</li>
+            <li><span class="year">平成14–15</span>愛知県東郷町　環境を考える会委員</li>
+            <li><span class="year">平成21–22</span>愛知県東郷町　都市計画マスタープラン策定員</li>
+            <li><span class="year">平成25〜3年</span>名古屋市　地域まちづくりアドバイザー</li>
+            <li><span class="year">その他</span>NPOや有志で環境問題・街づくり活動 多数経験</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ★ Section 08 ／ CONTACT ＝ お問合せ
+     ───────────────────────────────────────
+     ※ フォームは現状「mailto:方式」で動作。
+     ===================================================== -->
+<section class="contact-sec" id="contact">
+  <div class="container">
+
+    <div class="contact-header reveal">
+      <div class="dim-line" style="color:var(--paper);margin-bottom:14px;">08 ／ CONTACT US</div>
+      <div class="num">0<span class="v">8</span></div>
+      <h2 class="title">
+        無料相談・<br>
+        <span class="v">お問合せ</span>。
+      </h2>
+      <p class="sub">
+        エネルギーBCP設計に関するご相談を承ります。お客様の建物やライフスタイルに最適なプランをご提案します。具体的な相談へのハードルを、いっしょに下げましょう。
+      </p>
+    </div>
+
+    <!-- 連絡方法 3カラム -->
+    <div class="contact-methods reveal">
+      <div class="cm">
+        <div class="cm-latin">01 ／ CALL</div>
+        <div class="cm-name">お電話</div>
+        <div class="cm-sub">000-0000-0000<br>MON-FRI 9:00-18:00</div>
+      </div>
+      <div class="cm">
+        <div class="cm-latin">02 ／ EMAIL</div>
+        <div class="cm-name">メール</div>
+        <div class="cm-sub">24時間受付<br>info@chikulabo.jp</div>
+      </div>
+      <div class="cm">
+        <div class="cm-latin">03 ／ ZOOM</div>
+        <div class="cm-name">オンライン相談</div>
+        <div class="cm-sub">ZOOM面談（1回30分程度）<br>事前ご予約制</div>
+      </div>
+    </div>
+
+    <!-- フォーム -->
+    <form class="contact-form-wrap reveal" onsubmit="return false;">
+      <div class="form-label">CONTACT FORM ／ 申込みフォーム</div>
+      <h3>無料相談を申し込む</h3>
+      <p class="form-note">
+        ※ 送信ボタンを押すと、ご利用中のメーラーが立ち上がります。<br>
+        内容をご確認のうえ、そのまま送信してください。
+      </p>
+
+      <div class="form-grid">
+        <div class="field">
+          <label>お名前 ／ NAME</label>
+          <input type="text" name="name" placeholder="山田 太郎" required>
+        </div>
+        <div class="field">
+          <label>メール ／ EMAIL</label>
+          <input type="email" name="email" placeholder="example@email.com" required>
+        </div>
+        <div class="field">
+          <label>電話番号 ／ TEL</label>
+          <input type="tel" name="tel" placeholder="090-1234-5678">
+        </div>
+        <div class="field">
+          <label>ご希望のプラン ／ PLAN</label>
+          <select name="plan">
+            <option value="">選択してください</option>
+            <option>診断エコノミー（10万円）</option>
+            <option>診断スタンダード（20万円）</option>
+            <option>診断フルスペック（30万円）</option>
+            <option>スタータープラン（2時間）</option>
+            <option>生活持続プラン（6時間）</option>
+            <option>自立プラン（12時間）</option>
+            <option>まずは相談したい</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label>お問合せ内容 ／ MESSAGE</label>
+          <textarea name="message" placeholder="ご質問や、ご相談の内容をご記入ください。"></textarea>
+        </div>
+      </div>
+
+      <button type="submit" class="form-submit">無料相談を申し込む　→</button>
+      <p class="form-disclaimer">PRIVACY ／ ご入力の個人情報は、お問合せのご対応のためにのみ使用いたします。</p>
+    </form>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     フッター
+     ===================================================== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="latin">CHIKUDEN L<span class="v">A</span>BO</div>
+      <div class="sub">EST. 2026 ／ BY SOLAR &amp; BATTERY</div>
+      <p>建築士が設計するエネルギーBCPコンサルティング。お客様の安心・安全な暮らしと事業を、35年以上の建築の知見でサポートします。</p>
+    </div>
+    <div class="footer-col">
+      <h5>SERVICES</h5>
+      <ul>
+        <li>エネルギーBCP診断</li>
+        <li>蓄電システム設置</li>
+        <li>太陽光パネル設置</li>
+        <li>建物総合診断</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>CONTACT</h5>
+      <ul>
+        <li>TEL：000-0000-0000</li>
+        <li>MON-FRI 9:00-18:00</li>
+        <li>info@chikulabo.jp</li>
+        <li>24h reception</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 CHIKUDEN LABO. ALL RIGHTS RESERVED.</div>
+    <div>PRIVACY POLICY ／ TERMS</div>
+  </div>
+</footer>
+
+
+<!-- =====================================================
+     モバイル下部スティッキーCTA
+     ===================================================== -->
+<nav class="mobile-cta-bar" aria-label="お問合せ">
+  <a href="tel:000-0000-0000" class="tel-btn">
+    <span class="latin">CALL</span>
+    <span class="icon">📞</span>
+    お電話
+  </a>
+  <a href="#contact" class="contact-btn" data-scroll="contact">
+    <span class="latin">CONTACT</span>
+    <span class="icon">✉</span>
+    無料相談を申し込む
+  </a>
+</nav>
+
+
+<!-- ===== JavaScript ===== -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

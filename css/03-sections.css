@@ -1,0 +1,2304 @@
+@charset "UTF-8";
+/* =====================================================
+   CHIKUDEN LABO ｜ 03-sections.css (v4 / Blueprint × Editorial)
+   ─────────────────────────────────────────────
+   ▼ 目次
+   ─ Section 01：ファーストビュー（hero）
+   ─ Section 02：ターゲット（target）
+   ─ Section 03：リスク・０は０（risks）
+   ─ Section 04：BCP（bcp）
+   ─ Section 05：診断・プラン（menu）
+   ─ Section 06：他社との違い（diff）
+   ─ Section 07：プロフィール（profile）
+   ─ Section 08：お問合せ（contact-sec）
+   ===================================================== */
+
+
+/* =====================================================
+   ★ Section 01 / HERO ／ ファーストビュー
+   ───────────────────────────────────────
+   ・ブループリント背景
+   ・隅に十字マーク（製図用紙の隅）
+   ・巨大な"01"ナンバー
+   ・縦書き日本語（右側）
+   ===================================================== */
+.hero {
+  background: var(--paper);
+  padding-top: 100px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 640px) {
+  .hero { padding-top: 130px; padding-bottom: 110px; }
+}
+@media (min-width: 1024px) {
+  .hero { padding-top: 160px; padding-bottom: 140px; }
+}
+
+.hero .container { position: relative; z-index: 2; }
+
+/* 製図風のヘッダーストリップ */
+.hero-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid var(--ink);
+}
+.hero-strip .left {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.hero-strip .right {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--vermillion);
+  text-transform: uppercase;
+}
+@media (min-width: 640px) {
+  .hero-strip { padding-bottom: 18px; margin-bottom: 50px; }
+  .hero-strip .left, .hero-strip .right { font-size: 11px; }
+}
+
+/* ロゴ */
+.hero-brand {
+  margin-bottom: 28px;
+}
+.hero-brand .mark {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 38px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  line-height: 0.95;
+  margin-bottom: 6px;
+}
+.hero-brand .mark .v { color: var(--vermillion); }
+.hero-brand .tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.25em;
+  color: var(--ink);
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+@media (min-width: 640px) {
+  .hero-brand { margin-bottom: 36px; }
+  .hero-brand .mark { font-size: 56px; letter-spacing: 0.08em; }
+  .hero-brand .tag { font-size: 12px; letter-spacing: 0.28em; }
+}
+@media (min-width: 1024px) {
+  .hero-brand .mark { font-size: 80px; }
+}
+
+/* グリッド：hero-main（左：見出し / 右：縦書き or 画像） */
+.hero-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+@media (min-width: 1024px) {
+  .hero-main {
+    grid-template-columns: 1fr 80px;
+    gap: 48px;
+  }
+}
+
+/* 巨大な見出し */
+.hero-headline {
+  font-family: 'Shippori Mincho B1', serif;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.35;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  position: relative;
+}
+.hero-headline .v { color: var(--vermillion); }
+.hero-headline .under {
+  background: linear-gradient(180deg, transparent 70%, var(--vermillion) 70%, var(--vermillion) 95%, transparent 95%);
+  padding: 0 4px;
+}
+@media (min-width: 640px) {
+  .hero-headline { font-size: 50px; line-height: 1.3; }
+}
+@media (min-width: 1024px) {
+  .hero-headline { font-size: 80px; line-height: 1.2; letter-spacing: 0.005em; }
+}
+
+/* 縦書きセリフ（PCのみ表示）*/
+.hero-vertical {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .hero-vertical {
+    display: block;
+    writing-mode: vertical-rl;
+    font-family: 'Shippori Mincho B1', serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.2em;
+    line-height: 1.85;
+    color: var(--ink);
+    border-right: 1px solid var(--ink);
+    padding-right: 18px;
+    height: 320px;
+    margin-left: auto;
+  }
+  .hero-vertical .v { color: var(--vermillion); }
+}
+
+/* サブコピー：エディトリアル風大文字レイアウト */
+.hero-subline {
+  margin: 28px 0;
+  padding: 18px 0;
+  border-top: 1px solid var(--line-mid);
+  border-bottom: 1px solid var(--line-mid);
+}
+.hero-subline .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.25em;
+  color: var(--vermillion);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.hero-subline p {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 17px;
+  line-height: 1.85;
+  font-weight: 600;
+  color: var(--ink);
+}
+.hero-subline p strong { font-weight: 800; }
+.hero-subline p .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .hero-subline { margin: 36px 0; padding: 22px 0; }
+  .hero-subline p { font-size: 20px; }
+}
+
+/* 訴求問い：ドロップキャップ風 */
+.hero-question {
+  position: relative;
+  padding: 0 0 0 26px;
+  margin-bottom: 36px;
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--ink);
+  font-weight: 600;
+}
+.hero-question::before {
+  content: '?';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--vermillion);
+  line-height: 1;
+}
+@media (min-width: 640px) {
+  .hero-question { font-size: 17px; padding-left: 36px; }
+  .hero-question::before { font-size: 52px; }
+}
+
+/* 特徴2点：エディトリアル風2カラム */
+.hero-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin-bottom: 40px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+@media (min-width: 640px) {
+  .hero-features { grid-template-columns: 1fr 1fr; }
+}
+.hero-feature {
+  padding: 20px 0;
+  position: relative;
+}
+.hero-feature + .hero-feature {
+  border-top: 1px solid var(--line-mid);
+}
+@media (min-width: 640px) {
+  .hero-feature { padding: 26px 26px 26px 0; }
+  .hero-feature + .hero-feature {
+    border-top: none;
+    border-left: 1px solid var(--ink);
+    padding-left: 26px;
+  }
+}
+.hero-feature .feat-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--vermillion);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.hero-feature h3 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.hero-feature p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--text-sub);
+}
+
+/* CTAボタン */
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+@media (min-width: 640px) {
+  .hero-ctas { flex-direction: row; gap: 16px; margin-bottom: 56px; }
+}
+
+/* メインビジュアル */
+.hero-visual {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 24px;
+  position: relative;
+}
+.hero-visual .sub-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .hero-visual {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 16px;
+  }
+  .hero-visual .sub-stack {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+/* メインビジュアルの直下に注釈 */
+.hero-caption {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.hero-caption .right { color: var(--vermillion); }
+
+
+/* =====================================================
+   ★ Section 02 / TARGET ／ ターゲット明確化
+   ───────────────────────────────────────
+   ・大きな問いかけ「私のところは大丈夫？」
+   ・編集者風の段組み
+   ・カードに番号と寸法線
+   ===================================================== */
+.target {
+  background: var(--paper-warm);
+  position: relative;
+}
+.target::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(10, 31, 61, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 61, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+@media (min-width: 1024px) {
+  .target::before { background-size: 60px 60px; }
+}
+.target > .container { position: relative; z-index: 2; }
+
+.target-header {
+  margin-bottom: 40px;
+  position: relative;
+}
+.target-num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 0.85;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.target-num .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .target-num { font-size: 160px; }
+}
+@media (min-width: 1024px) {
+  .target-num { font-size: 220px; }
+}
+.target-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.target-question {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding: 18px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 20px;
+}
+.target-question::before {
+  content: 'Q';
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  color: var(--vermillion);
+  font-size: 0.85em;
+  margin-right: 12px;
+}
+@media (min-width: 640px) {
+  .target-question { font-size: 38px; padding: 22px 0; }
+}
+@media (min-width: 1024px) {
+  .target-question { font-size: 52px; }
+}
+
+.target-lead {
+  font-size: 14.5px;
+  line-height: 2;
+  color: var(--text-sub);
+  margin: 26px 0 40px;
+  max-width: 580px;
+}
+
+/* 4つのターゲットカード */
+.target-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+@media (min-width: 640px) {
+  .target-cards { grid-template-columns: 1fr 1fr; gap: 22px; }
+}
+@media (min-width: 1024px) {
+  .target-cards { grid-template-columns: repeat(4, 1fr); gap: 22px; }
+}
+
+.target-card {
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 22px;
+  position: relative;
+  transition: all .3s ease;
+}
+.target-card:hover {
+  background: var(--paper-light);
+}
+@media (min-width: 1024px) {
+  .target-card:hover { transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--ink); }
+}
+
+.target-card .card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--line-mid);
+}
+.target-card .card-num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 40px;
+  color: var(--vermillion);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.target-card .card-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--text-sub);
+  text-transform: uppercase;
+}
+.target-card .card-img {
+  margin-bottom: 16px;
+}
+.target-card h3 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.55;
+}
+.target-card .arrow-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--vermillion);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+.target-card .arrow-line::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--vermillion);
+}
+.target-card p {
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: var(--text-sub);
+}
+
+
+/* =====================================================
+   ★ Section 03 / RISKS ／ 万が一のリスク・０は０
+   ───────────────────────────────────────
+   ・各リスクに巨大な番号（01/02/03）
+   ・「０は０」セクションは漆黒背景でドラマチック
+   ===================================================== */
+.risks {
+  background: var(--paper);
+  position: relative;
+}
+
+.risks-header {
+  margin-bottom: 50px;
+  position: relative;
+}
+.risks-header .num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 0.85;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.risks-header .num .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .risks-header .num { font-size: 160px; }
+}
+@media (min-width: 1024px) {
+  .risks-header .num { font-size: 220px; }
+}
+
+.risks-headline {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.45;
+  margin-bottom: 18px;
+}
+.risks-headline .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .risks-headline { font-size: 36px; }
+}
+@media (min-width: 1024px) {
+  .risks-headline { font-size: 52px; line-height: 1.4; }
+}
+
+.risks-lead {
+  font-size: 14.5px;
+  line-height: 2;
+  color: var(--text-sub);
+  max-width: 600px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-mid);
+}
+
+/* 3つのリスク */
+.risk-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 60px;
+}
+@media (min-width: 640px) {
+  .risk-grid { gap: 28px; }
+}
+@media (min-width: 1024px) {
+  .risk-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.risk-card {
+  background: transparent;
+  border-top: 2px solid var(--ink);
+  padding: 24px 0 28px;
+  position: relative;
+}
+.risk-card .risk-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.risk-card .risk-num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 0.85;
+  color: var(--vermillion);
+  letter-spacing: -0.04em;
+  flex-shrink: 0;
+}
+.risk-card .risk-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  color: var(--ink);
+  text-transform: uppercase;
+  padding-top: 6px;
+}
+.risk-card .risk-img {
+  margin-bottom: 16px;
+}
+.risk-card h4 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.risk-card p {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--text-sub);
+}
+
+/* 影響セクション（エディトリアル風） */
+.impact-row {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 40px 28px;
+  margin-bottom: 60px;
+  position: relative;
+}
+.impact-row::before {
+  content: '+';
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  color: var(--vermillion);
+  font-size: 16px;
+  font-weight: 700;
+}
+.impact-row::after {
+  content: '+';
+  position: absolute;
+  bottom: 10px;
+  right: 12px;
+  color: var(--vermillion);
+  font-size: 16px;
+  font-weight: 700;
+}
+.impact-row .impact-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.impact-row h3 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--paper);
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+@media (min-width: 640px) {
+  .impact-row { padding: 56px 48px; }
+  .impact-row h3 { font-size: 30px; margin-bottom: 36px; }
+}
+
+.impact-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 640px) {
+  .impact-list { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+.impact-item .impact-num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--vermillion);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.impact-item h4 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 16.5px;
+  color: var(--paper);
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.impact-item p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: rgba(242, 237, 224, 0.75);
+}
+
+/* ０は０ ブロック */
+.zero-block {
+  background: var(--vermillion);
+  color: var(--paper);
+  padding: 60px 0 70px;
+  margin: 0 calc(-1 * var(--gutter));
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 640px) {
+  .zero-block { padding: 80px 0 90px; }
+}
+@media (min-width: 1024px) {
+  .zero-block { padding: 110px 0 120px; }
+}
+
+/* グリッド模様 */
+.zero-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(242, 237, 224, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 237, 224, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.zero-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+  z-index: 2;
+}
+.zero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--paper);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.zero-headline {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 36px;
+  color: var(--paper);
+}
+@media (min-width: 640px) {
+  .zero-headline { font-size: 34px; margin-bottom: 44px; }
+}
+@media (min-width: 1024px) {
+  .zero-headline { font-size: 48px; }
+}
+
+.zero-visual {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 18px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+.zero-big {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 150px;
+  font-weight: 800;
+  color: var(--paper);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+.zero-eq {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 60px;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 0.85;
+}
+@media (min-width: 640px) {
+  .zero-visual { gap: 40px; margin: 50px 0; }
+  .zero-big { font-size: 220px; }
+  .zero-eq { font-size: 90px; }
+}
+@media (min-width: 1024px) {
+  .zero-big { font-size: 320px; }
+  .zero-eq { font-size: 130px; }
+}
+
+.zero-labels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 40px 0;
+}
+@media (min-width: 640px) {
+  .zero-labels { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+}
+.zero-labels .lbl {
+  padding: 16px 18px;
+  border: 1px solid rgba(242, 237, 224, 0.4);
+  background: transparent;
+}
+.zero-labels .lbl .k {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.25em;
+  color: var(--paper);
+  margin-bottom: 8px;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+.zero-labels .lbl .v {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--paper);
+}
+.zero-labels .lbl.risk {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.zero-labels .lbl.risk .k { color: var(--vermillion); opacity: 1; }
+.zero-labels .lbl.risk .v { color: var(--paper); }
+
+.zero-message {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 15px;
+  line-height: 2;
+  max-width: 720px;
+  margin-top: 28px;
+  color: var(--paper);
+}
+.zero-message strong { color: var(--ink); font-weight: 800; }
+@media (min-width: 640px) {
+  .zero-message { font-size: 17px; }
+}
+
+
+/* =====================================================
+   ★ Section 04 / BCP ／ 解決策・BCP設計
+   ───────────────────────────────────────
+   ・編集者風2カラム
+   ・ドロップキャップ
+   ・引用ブロック
+   ===================================================== */
+.bcp {
+  background: var(--paper);
+  position: relative;
+}
+
+.bcp-header {
+  margin-bottom: 40px;
+}
+.bcp-header .num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 0.85;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.bcp-header .num .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .bcp-header .num { font-size: 160px; }
+}
+@media (min-width: 1024px) {
+  .bcp-header .num { font-size: 220px; }
+}
+
+.bcp-title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.bcp-title .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .bcp-title { font-size: 38px; }
+}
+@media (min-width: 1024px) {
+  .bcp-title { font-size: 56px; }
+}
+
+/* 提案ヘッドラインボックス（看板風） */
+.bcp-headline-box {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 28px 24px;
+  margin: 36px 0 40px;
+  position: relative;
+}
+.bcp-headline-box::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(242, 237, 224, 0.3);
+  pointer-events: none;
+}
+.bcp-headline-box .badge {
+  display: inline-block;
+  background: var(--vermillion);
+  color: var(--paper);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.28em;
+  padding: 5px 12px;
+  margin-bottom: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.bcp-headline-box h3 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 19px;
+  color: var(--paper);
+  font-weight: 800;
+  line-height: 1.65;
+  position: relative;
+  z-index: 1;
+}
+.bcp-headline-box h3 em {
+  font-style: normal;
+  color: var(--vermillion);
+}
+@media (min-width: 640px) {
+  .bcp-headline-box { padding: 40px 36px; }
+  .bcp-headline-box h3 { font-size: 26px; }
+}
+@media (min-width: 1024px) {
+  .bcp-headline-box h3 { font-size: 32px; }
+}
+
+/* 避難所写真 */
+.bcp-visual {
+  margin: 40px 0;
+  position: relative;
+}
+.bcp-visual .caption {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.bcp-visual .caption .right { color: var(--vermillion); }
+
+/* 本文（エディトリアル2カラム） */
+.bcp-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+@media (min-width: 1024px) {
+  .bcp-body { grid-template-columns: 1.3fr 1fr; gap: 48px; }
+}
+
+.bcp-text {
+  font-size: 14px;
+  line-height: 2.05;
+  color: var(--text-sub);
+}
+/* ドロップキャップ */
+.bcp-text p:first-child::first-letter {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 56px;
+  float: left;
+  line-height: 0.95;
+  margin: 6px 10px 0 0;
+  color: var(--vermillion);
+}
+.bcp-text p { margin-bottom: 18px; }
+.bcp-text strong { color: var(--ink); font-weight: 700; }
+@media (min-width: 640px) {
+  .bcp-text { font-size: 14.5px; }
+  .bcp-text p:first-child::first-letter { font-size: 72px; }
+}
+
+/* サイドボックス */
+.bcp-callout {
+  background: var(--paper-warm);
+  padding: 28px 24px;
+  border-left: 3px solid var(--vermillion);
+}
+.bcp-callout .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.bcp-callout h3 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 18px;
+  color: var(--ink);
+  margin-bottom: 14px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+.bcp-callout h3 .latin {
+  display: block;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  color: var(--vermillion);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.bcp-callout p {
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--text-sub);
+}
+@media (min-width: 640px) {
+  .bcp-callout { padding: 36px 32px; }
+}
+
+/* パンチライン（引用風） */
+.bcp-punch {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 36px 28px;
+  position: relative;
+  margin-top: 36px;
+}
+.bcp-punch::before {
+  content: '“';
+  position: absolute;
+  top: -14px;
+  left: 18px;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 90px;
+  color: var(--vermillion);
+  font-weight: 800;
+  line-height: 1;
+}
+.bcp-punch p {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 16px;
+  line-height: 1.95;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.bcp-punch p:last-child { margin-bottom: 0; }
+.bcp-punch p em { font-style: normal; color: var(--vermillion); font-weight: 800; }
+.bcp-punch p strong { color: var(--paper); }
+@media (min-width: 640px) {
+  .bcp-punch { padding: 50px 48px; }
+  .bcp-punch p { font-size: 19px; }
+}
+@media (min-width: 1024px) {
+  .bcp-punch p { font-size: 22px; }
+}
+
+
+/* =====================================================
+   ★ Section 05 / MENU ／ コンサルティング・プラン
+   ───────────────────────────────────────
+   ・診断3コース：価格を巨大に
+   ・3プラン：建築仕様書風
+   ・値引きマトリクス：スマホはカード/PCはテーブル
+   ===================================================== */
+.menu {
+  background: var(--paper-warm);
+  position: relative;
+}
+.menu::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(10, 31, 61, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 61, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+.menu > .container { position: relative; z-index: 2; }
+
+.menu-header { margin-bottom: 50px; }
+.menu-header .num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 0.85;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.menu-header .num .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .menu-header .num { font-size: 160px; }
+}
+@media (min-width: 1024px) {
+  .menu-header .num { font-size: 220px; }
+}
+.menu-header .title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.45;
+}
+.menu-header .title .v { color: var(--vermillion); }
+.menu-header .meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--text-sub);
+  margin-top: 14px;
+  text-transform: uppercase;
+}
+@media (min-width: 640px) {
+  .menu-header .title { font-size: 36px; }
+}
+@media (min-width: 1024px) {
+  .menu-header .title { font-size: 50px; }
+}
+
+/* 診断コース */
+.diag-block { margin-bottom: 60px; }
+.diag-block-head { margin-bottom: 28px; }
+.diag-block-head .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.diag-block-head h3 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 22px;
+  color: var(--ink);
+  font-weight: 800;
+  line-height: 1.5;
+}
+.diag-block-head h3 .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .diag-block-head h3 { font-size: 28px; }
+}
+
+.diag-courses {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+@media (min-width: 640px) {
+  .diag-courses {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.diag-course {
+  background: transparent;
+  padding: 28px 22px;
+  position: relative;
+}
+.diag-course + .diag-course {
+  border-top: 1px solid var(--line-mid);
+}
+@media (min-width: 640px) {
+  .diag-course + .diag-course {
+    border-top: none;
+    border-left: 1px solid var(--line-mid);
+  }
+  .diag-course { padding: 32px 26px; }
+}
+.diag-course.featured {
+  background: var(--ink);
+  color: var(--paper);
+}
+.diag-course.featured h4 { color: var(--paper); }
+.diag-course.featured p { color: rgba(242, 237, 224, 0.75); }
+.diag-course.featured .scope { color: var(--vermillion); border-color: rgba(242, 237, 224, 0.2); }
+.diag-course.featured .price { color: var(--paper); }
+.diag-course.featured .price-sub { color: rgba(242, 237, 224, 0.5); }
+.diag-course.featured .course-tier { color: var(--vermillion); border-color: var(--vermillion); }
+
+.diag-course .course-tier {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.25em;
+  color: var(--vermillion);
+  font-weight: 600;
+  margin-bottom: 18px;
+  padding: 4px 10px;
+  border: 1px solid var(--vermillion);
+  text-transform: uppercase;
+}
+.diag-course .price {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 0.9;
+  margin-bottom: 4px;
+  letter-spacing: -0.04em;
+}
+.diag-course .price .unit {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 18px;
+  margin-left: 4px;
+  font-weight: 800;
+}
+.diag-course .price-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-mute);
+  margin-bottom: 16px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+@media (min-width: 640px) {
+  .diag-course .price { font-size: 72px; }
+}
+
+.diag-course h4 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 14px 0 10px;
+  line-height: 1.5;
+}
+.diag-course p {
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: var(--text-sub);
+}
+.diag-course .scope {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--vermillion);
+  margin-top: 14px;
+  letter-spacing: 0.1em;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line-mid);
+  text-transform: uppercase;
+}
+
+.diag-note {
+  background: var(--paper);
+  border-left: 3px solid var(--vermillion);
+  padding: 20px 22px;
+  font-size: 12.5px;
+  line-height: 1.95;
+  color: var(--text-sub);
+  margin-top: 28px;
+}
+.diag-note strong { color: var(--ink); font-weight: 700; }
+@media (min-width: 640px) {
+  .diag-note { padding: 26px 30px; font-size: 13.5px; }
+}
+
+/* プラン */
+.plans-header { margin: 60px 0 36px; }
+.plans-header .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.plans-header .small-title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 22px;
+  color: var(--ink);
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.plans-header p {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  line-height: 1.95;
+  max-width: 680px;
+}
+@media (min-width: 640px) {
+  .plans-header .small-title { font-size: 28px; }
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+@media (min-width: 640px) {
+  .plans { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+}
+.plan {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 28px 24px;
+  border: 1px solid var(--ink);
+  position: relative;
+}
+.plan.featured {
+  background: var(--vermillion);
+  color: var(--paper);
+  border-color: var(--vermillion);
+}
+@media (min-width: 640px) {
+  .plan.featured { transform: translateY(-10px); }
+}
+.plan .plan-tag {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.28em;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 4px 10px;
+  margin-bottom: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.plan.featured .plan-tag {
+  background: var(--ink);
+  color: var(--paper);
+}
+.plan .duration {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 0.9;
+  margin-bottom: 4px;
+  letter-spacing: -0.05em;
+}
+.plan .duration .unit {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 22px;
+  margin-left: 4px;
+  font-weight: 800;
+}
+.plan .plan-name {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 14px 0 6px;
+  line-height: 1.4;
+}
+.plan .plan-price {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+.plan .plan-price .yen {
+  font-size: 13px;
+  margin-right: 2px;
+}
+.plan ul {
+  list-style: none;
+  padding-top: 16px;
+  border-top: 1px solid currentColor;
+  opacity: 1;
+}
+.plan ul {
+  border-color: var(--line);
+}
+.plan.featured ul { border-color: rgba(242, 237, 224, 0.3); }
+.plan li {
+  padding: 7px 0;
+  font-size: 12.5px;
+  line-height: 1.65;
+  display: flex;
+  gap: 8px;
+}
+.plan li::before {
+  content: '+';
+  color: var(--vermillion);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-family: 'JetBrains Mono', monospace;
+}
+.plan.featured li::before { color: var(--paper); }
+
+/* 値引きマトリクス */
+.discount-section {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 32px 24px;
+  margin: 40px 0 30px;
+  position: relative;
+}
+.discount-section::before {
+  content: '+';
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  color: var(--vermillion);
+  font-size: 16px;
+  font-weight: 700;
+}
+.discount-section::after {
+  content: '+';
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  color: var(--vermillion);
+  font-size: 16px;
+  font-weight: 700;
+}
+@media (min-width: 640px) {
+  .discount-section { padding: 44px 40px; }
+}
+.discount-section .ds-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.discount-section h4 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 19px;
+  color: var(--paper);
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.discount-section h4 em { font-style: normal; color: var(--vermillion); }
+.discount-section .ds-sub {
+  font-size: 12.5px;
+  color: rgba(242, 237, 224, 0.75);
+  margin-bottom: 24px;
+  line-height: 1.85;
+}
+.discount-section .ds-sub strong { color: var(--paper); }
+@media (min-width: 640px) {
+  .discount-section h4 { font-size: 26px; }
+}
+
+/* モバイル：カード型 */
+.discount-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width: 720px) { .discount-cards { display: none; } }
+.discount-card {
+  background: transparent;
+  border: 1px solid rgba(242, 237, 224, 0.3);
+  padding: 18px;
+}
+.discount-card .plan-head {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--vermillion);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(242, 237, 224, 0.25);
+}
+.discount-card .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 12px;
+  color: var(--paper);
+  border-bottom: 1px dashed rgba(242, 237, 224, 0.12);
+}
+.discount-card .row:last-child { border-bottom: none; }
+.discount-card .row .label {
+  color: rgba(242, 237, 224, 0.7);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+}
+.discount-card .row .val {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 700;
+  color: var(--paper);
+  font-size: 12.5px;
+}
+.discount-card .row .val small {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  opacity: 0.6;
+  margin-left: 4px;
+  font-weight: 400;
+}
+.discount-card .row .val.zero {
+  color: var(--vermillion);
+  font-size: 14px;
+}
+
+/* タブレット以上：テーブル */
+.discount-table-wrap {
+  display: none;
+  overflow-x: auto;
+}
+@media (min-width: 720px) {
+  .discount-table-wrap { display: block; }
+}
+.discount-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  color: var(--paper);
+}
+.discount-table th, .discount-table td {
+  padding: 14px 12px;
+  text-align: center;
+  border: 1px solid rgba(242, 237, 224, 0.25);
+  vertical-align: middle;
+}
+.discount-table th {
+  background: rgba(242, 237, 224, 0.05);
+  font-family: 'Shippori Mincho B1', serif;
+  font-weight: 800;
+  color: var(--paper);
+  letter-spacing: 0.04em;
+}
+.discount-table th small {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(242, 237, 224, 0.6);
+  margin-top: 4px;
+  letter-spacing: 0.1em;
+}
+.discount-table th.corner {
+  background: transparent;
+  border-color: transparent;
+}
+.discount-table tbody th {
+  text-align: left;
+  padding-left: 16px;
+  font-size: 12.5px;
+  color: var(--vermillion);
+}
+.discount-table td {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 700;
+  color: var(--paper);
+}
+.discount-table td small {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  color: rgba(242, 237, 224, 0.55);
+  font-weight: 400;
+  margin-top: 3px;
+  letter-spacing: 0.05em;
+}
+.discount-table td.zero {
+  color: var(--vermillion);
+  font-size: 16px;
+}
+
+.plans-footer {
+  margin-top: 28px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-sub);
+  line-height: 1.8;
+  background: var(--paper);
+  padding: 20px 22px;
+  border-left: 2px solid var(--vermillion);
+  letter-spacing: 0.03em;
+}
+.plans-footer strong { color: var(--ink); }
+@media (min-width: 640px) {
+  .plans-footer { font-size: 11.5px; padding: 24px 28px; }
+}
+
+
+/* =====================================================
+   ★ Section 06 / DIFF ／ 他社との違い
+   ───────────────────────────────────────
+   ・3つの違いを建築仕様書風に
+   ・大きな番号 + 詳細
+   ===================================================== */
+.diff {
+  background: var(--paper);
+  position: relative;
+}
+
+.diff-header {
+  margin-bottom: 40px;
+}
+.diff-header .num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 0.85;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.diff-header .num .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .diff-header .num { font-size: 160px; }
+}
+@media (min-width: 1024px) {
+  .diff-header .num { font-size: 220px; }
+}
+
+.diff-title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+.diff-title .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .diff-title { font-size: 38px; }
+}
+@media (min-width: 1024px) {
+  .diff-title { font-size: 54px; }
+}
+
+.diff-lead {
+  font-size: 14.5px;
+  line-height: 2;
+  color: var(--text-sub);
+  max-width: 760px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-mid);
+  margin-bottom: 50px;
+}
+.diff-lead strong { color: var(--ink); font-weight: 700; }
+.diff-lead em { font-style: normal; color: var(--vermillion); font-weight: 700; }
+
+/* 3つの違い */
+.diff-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: 50px;
+}
+.diff-point {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  padding: 32px 0;
+  position: relative;
+}
+.diff-point + .diff-point {
+  border-top: 1px solid var(--line-mid);
+}
+@media (min-width: 640px) {
+  .diff-point {
+    grid-template-columns: 120px 1fr;
+    gap: 32px;
+    padding: 40px 0;
+  }
+}
+.diff-point .pt-num {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--vermillion);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+.diff-point .pt-num small {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.25em;
+  color: var(--ink);
+  font-weight: 600;
+  margin-top: 8px;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+@media (min-width: 640px) {
+  .diff-point .pt-num { font-size: 92px; }
+}
+.diff-point h3 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+.diff-point h3 em { font-style: normal; color: var(--vermillion); }
+@media (min-width: 640px) {
+  .diff-point h3 { font-size: 24px; }
+}
+.diff-point p {
+  font-size: 13.5px;
+  line-height: 2;
+  color: var(--text-sub);
+  margin-bottom: 12px;
+}
+.diff-point p strong { color: var(--ink); font-weight: 700; }
+.diff-point .note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-mute);
+  letter-spacing: 0.03em;
+  margin-top: 8px;
+}
+.diff-point .use-cases {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 18px;
+}
+@media (min-width: 640px) {
+  .diff-point .use-cases { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+}
+.diff-point .use-case {
+  background: var(--paper-warm);
+  padding: 10px 14px;
+  font-size: 11.5px;
+  color: var(--ink);
+  font-weight: 500;
+  border-left: 2px solid var(--vermillion);
+  line-height: 1.5;
+}
+@media (min-width: 640px) {
+  .diff-point .use-case { padding: 12px 16px; font-size: 12.5px; }
+}
+
+/* MADE IN JAPAN バッジ */
+.made-in-jp {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+  padding: 32px 24px;
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+}
+.made-in-jp::before {
+  content: 'STAMP / 認証印';
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  color: var(--vermillion);
+  text-transform: uppercase;
+}
+@media (min-width: 640px) {
+  .made-in-jp { grid-template-columns: 240px 1fr; gap: 40px; padding: 44px 40px; }
+}
+.made-in-jp .badge {
+  text-align: center;
+  padding: 28px;
+  background: var(--vermillion);
+  color: var(--paper);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transform: rotate(-8deg);
+}
+.made-in-jp .badge .latin {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  margin-bottom: 6px;
+  font-weight: 800;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.made-in-jp .badge .ja {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.4;
+  padding: 8px 0;
+  border-top: 1px solid var(--paper);
+  border-bottom: 1px solid var(--paper);
+  margin: 6px 0;
+}
+.made-in-jp .badge .sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.18em;
+  margin-top: 6px;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+.made-in-jp .text p {
+  font-size: 13.5px;
+  line-height: 2;
+  color: rgba(242, 237, 224, 0.85);
+}
+.made-in-jp .text strong { color: var(--paper); }
+
+
+/* =====================================================
+   ★ Section 07 / PROFILE ／ プロフィール
+   ───────────────────────────────────────
+   ・縦書き「本気度」など
+   ・編集者風レイアウト
+   ===================================================== */
+.profile {
+  background: var(--paper);
+  position: relative;
+}
+
+.profile-header {
+  margin-bottom: 50px;
+  position: relative;
+}
+.profile-header .num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 0.85;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.profile-header .num .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .profile-header .num { font-size: 160px; }
+}
+@media (min-width: 1024px) {
+  .profile-header .num { font-size: 220px; }
+}
+.profile-title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.profile-title .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .profile-title { font-size: 38px; }
+}
+@media (min-width: 1024px) {
+  .profile-title { font-size: 54px; }
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+@media (min-width: 1024px) {
+  .profile-layout {
+    grid-template-columns: 320px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+}
+
+/* 左：ポートレート + 縦書きキャプション */
+.profile-portrait {
+  position: relative;
+}
+.profile-portrait .portrait-wrap {
+  position: relative;
+  max-width: 280px;
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .profile-portrait {
+    position: sticky;
+    top: 90px;
+  }
+  .profile-portrait .portrait-wrap { max-width: none; }
+}
+
+/* 縦書きキャプション */
+.profile-portrait .vert-caption {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .profile-portrait .vert-caption {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -42px;
+    writing-mode: vertical-rl;
+    font-family: 'Shippori Mincho B1', serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    line-height: 1.7;
+    color: var(--ink);
+    padding-right: 8px;
+    border-right: 1px solid var(--ink);
+    height: 280px;
+  }
+  .profile-portrait .vert-caption .v { color: var(--vermillion); }
+}
+
+.profile-portrait .name-block {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 2px solid var(--ink);
+  text-align: center;
+}
+@media (min-width: 1024px) {
+  .profile-portrait .name-block { text-align: left; }
+}
+.profile-portrait .role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--vermillion);
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.profile-portrait .name {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.profile-portrait .name-en {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 12.5px;
+  letter-spacing: 0.18em;
+  color: var(--text-sub);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* 右：本文 */
+.profile-body {
+  font-size: 14px;
+  line-height: 2.05;
+  color: var(--text-sub);
+}
+.profile-body h3 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 28px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--vermillion);
+  display: inline-block;
+}
+.profile-body h3:first-child { margin-top: 0; }
+.profile-body p { margin-bottom: 18px; font-size: 13.5px; }
+.profile-body p strong { color: var(--ink); font-weight: 700; }
+.profile-body p em { font-style: normal; color: var(--vermillion); font-weight: 700; }
+@media (min-width: 640px) {
+  .profile-body p { font-size: 14.5px; }
+  .profile-body h3 { font-size: 22px; }
+}
+
+/* ドロップキャップ */
+.profile-body .lead-p::first-letter {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 52px;
+  float: left;
+  line-height: 0.95;
+  margin: 6px 10px 0 0;
+  color: var(--vermillion);
+}
+@media (min-width: 640px) {
+  .profile-body .lead-p::first-letter { font-size: 68px; }
+}
+
+/* 資格 */
+.credentials {
+  background: var(--paper-warm);
+  padding: 22px 24px;
+  margin-top: 28px;
+  border-left: 3px solid var(--ink);
+}
+.credentials .cred-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.credentials ul { list-style: none; }
+.credentials li {
+  padding: 7px 0;
+  font-size: 12.5px;
+  border-bottom: 1px dashed var(--line-mid);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.7;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.credentials li::before {
+  content: '＋';
+  color: var(--vermillion);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.credentials li:last-child { border-bottom: none; }
+
+/* 受賞歴 */
+.awards {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 22px 24px;
+  margin-top: 18px;
+}
+.awards .aw-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.awards p {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--paper);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.awards p .star { color: var(--vermillion); }
+
+/* 委員歴 */
+.committees {
+  background: var(--paper-warm);
+  padding: 22px 24px;
+  margin-top: 18px;
+  border-left: 3px solid var(--vermillion);
+}
+.committees .com-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.committees ul { list-style: none; }
+.committees li {
+  padding: 7px 0;
+  font-size: 12.5px;
+  color: var(--text-sub);
+  border-bottom: 1px dashed var(--line-mid);
+  line-height: 1.7;
+}
+.committees li:last-child { border-bottom: none; }
+.committees li .year {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-right: 10px;
+  min-width: 90px;
+  font-size: 11.5px;
+}
+
+
+/* =====================================================
+   ★ Section 08 / CONTACT ／ お問合せ
+   ===================================================== */
+.contact-sec {
+  background: var(--ink);
+  color: var(--paper);
+  position: relative;
+  overflow: hidden;
+}
+.contact-sec::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(242, 237, 224, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 237, 224, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+.contact-sec > .container { position: relative; z-index: 2; }
+
+.contact-header {
+  margin-bottom: 44px;
+}
+.contact-header .num {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 100px;
+  line-height: 0.85;
+  color: var(--paper);
+  letter-spacing: -0.04em;
+  margin-bottom: 8px;
+}
+.contact-header .num .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .contact-header .num { font-size: 160px; }
+}
+@media (min-width: 1024px) {
+  .contact-header .num { font-size: 220px; }
+}
+.contact-header .title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--paper);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+.contact-header .title .v { color: var(--vermillion); }
+@media (min-width: 640px) {
+  .contact-header .title { font-size: 38px; }
+}
+@media (min-width: 1024px) {
+  .contact-header .title { font-size: 52px; }
+}
+.contact-header .sub {
+  font-size: 14px;
+  line-height: 2;
+  color: rgba(242, 237, 224, 0.75);
+  max-width: 580px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(242, 237, 224, 0.2);
+}
+
+/* 連絡方法 */
+.contact-methods {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 2px solid var(--paper);
+  border-bottom: 2px solid var(--paper);
+  margin: 36px 0;
+}
+@media (min-width: 640px) {
+  .contact-methods { grid-template-columns: repeat(3, 1fr); }
+}
+.cm {
+  padding: 24px 22px;
+  text-align: center;
+  position: relative;
+}
+.cm + .cm {
+  border-top: 1px solid rgba(242, 237, 224, 0.2);
+}
+@media (min-width: 640px) {
+  .cm + .cm {
+    border-top: none;
+    border-left: 1px solid rgba(242, 237, 224, 0.2);
+  }
+  .cm { padding: 36px 28px; }
+}
+.cm .cm-latin {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.cm .cm-name {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: var(--paper);
+}
+.cm .cm-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(242, 237, 224, 0.7);
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+}
+
+/* フォーム */
+.contact-form-wrap {
+  background: transparent;
+  border: 1px solid var(--paper);
+  padding: 28px 22px;
+  margin-top: 36px;
+  position: relative;
+}
+.contact-form-wrap::before, .contact-form-wrap::after {
+  content: '+';
+  position: absolute;
+  color: var(--vermillion);
+  font-size: 18px;
+  font-weight: 700;
+}
+.contact-form-wrap::before { top: 8px; left: 10px; }
+.contact-form-wrap::after { top: 8px; right: 10px; }
+@media (min-width: 640px) {
+  .contact-form-wrap { padding: 44px 40px; }
+}
+
+.contact-form-wrap .form-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.contact-form-wrap h3 {
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--paper);
+}
+@media (min-width: 640px) {
+  .contact-form-wrap h3 { font-size: 28px; }
+}
+.contact-form-wrap .form-note {
+  font-size: 12px;
+  color: rgba(242, 237, 224, 0.6);
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 640px) {
+  .form-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .form-grid .full { grid-column: 1 / -1; }
+}
+
+.field label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--vermillion);
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.field input, .field select, .field textarea {
+  width: 100%;
+  background: rgba(242, 237, 224, 0.05);
+  border: 1px solid rgba(242, 237, 224, 0.3);
+  color: var(--paper);
+  padding: 14px 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+  outline: none;
+  transition: border-color .25s;
+  min-height: 48px;
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--vermillion);
+}
+.field textarea { min-height: 120px; resize: vertical; }
+
+.form-submit {
+  width: 100%;
+  margin-top: 24px;
+  background: var(--vermillion);
+  color: var(--paper);
+  border: none;
+  padding: 18px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  transition: background .25s;
+  min-height: 56px;
+}
+.form-submit:hover { background: var(--vermillion-d); }
+
+.form-disclaimer {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: rgba(242, 237, 224, 0.5);
+  margin-top: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+}

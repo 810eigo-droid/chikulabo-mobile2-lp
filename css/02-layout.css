@@ -1,0 +1,277 @@
+@charset "UTF-8";
+/* =====================================================
+   CHIKUDEN LABO ｜ 02-layout.css (v4 / Blueprint × Editorial)
+   ─────────────────────────────────────────────
+   ・トップバー（製図ペン風・細罫）
+   ・下部スティッキーCTAバー（モバイル）
+   ・フッター（コロフォン風）
+   ===================================================== */
+
+
+/* =====================================================
+   1. トップバー（固定）
+   ===================================================== */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: var(--paper);
+  z-index: 100;
+  padding: 12px var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ink);
+}
+
+.topbar .brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.topbar .brand-main {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  font-size: 16px;
+  color: var(--ink);
+}
+.topbar .brand-main .v { color: var(--vermillion); }
+.topbar .brand-sub {
+  display: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--ink);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+@media (min-width: 640px) {
+  .topbar .brand-main { font-size: 18px; letter-spacing: 0.14em; }
+  .topbar .brand-sub { display: inline; }
+}
+
+.topbar .contact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.topbar .contact-tel {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.topbar .contact-tel::before {
+  content: '📞';
+  font-size: 14px;
+}
+.topbar .contact-tel small { display: none; }
+@media (min-width: 640px) {
+  .topbar .contact-tel::before { display: none; }
+  .topbar .contact-tel small {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+    color: var(--text-sub);
+    text-align: right;
+    margin-top: 1px;
+  }
+  .topbar .contact { gap: 22px; }
+}
+
+.topbar .btn-cta {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 9px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  transition: background .25s ease;
+  min-height: 38px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.topbar .btn-cta:hover { background: var(--vermillion); }
+@media (min-width: 640px) {
+  .topbar .btn-cta { padding: 10px 22px; font-size: 13px; }
+}
+
+
+/* =====================================================
+   2. モバイル下部スティッキーCTAバー
+   ===================================================== */
+.mobile-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--ink);
+  z-index: 99;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  border-top: 1px solid var(--vermillion);
+  box-shadow: 0 -6px 16px -6px rgba(10, 31, 61, 0.3);
+}
+.mobile-cta-bar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 8px;
+  color: var(--paper);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  min-height: 64px;
+  background: var(--ink);
+  transition: background .2s;
+  text-align: center;
+  line-height: 1.35;
+}
+.mobile-cta-bar a:active { background: var(--ink-soft); }
+.mobile-cta-bar a.tel-btn {
+  border-right: 1px solid rgba(242, 237, 224, 0.15);
+}
+.mobile-cta-bar a.contact-btn {
+  background: var(--vermillion);
+}
+.mobile-cta-bar a.contact-btn:active { background: var(--vermillion-d); }
+.mobile-cta-bar .icon {
+  font-size: 17px;
+  margin-bottom: 3px;
+  display: block;
+}
+.mobile-cta-bar .latin {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  opacity: 0.6;
+  margin-bottom: 1px;
+}
+
+@media (min-width: 1024px) {
+  .mobile-cta-bar { display: none; }
+}
+
+
+/* =====================================================
+   3. フッター（コロフォン風）
+   ===================================================== */
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 60px var(--gutter) 30px;
+  position: relative;
+}
+footer::before {
+  content: '+';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: var(--vermillion);
+  font-size: 18px;
+  font-weight: 700;
+}
+footer::after {
+  content: '+';
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  color: var(--vermillion);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-grid {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(242, 237, 224, 0.15);
+}
+@media (min-width: 640px) {
+  .footer-grid { grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
+}
+
+.footer-brand .latin {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 26px;
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+  font-weight: 800;
+  color: var(--paper);
+}
+.footer-brand .latin .v { color: var(--vermillion); }
+.footer-brand .sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  color: rgba(242, 237, 224, 0.6);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.footer-brand p {
+  font-size: 12.5px;
+  line-height: 1.95;
+  color: rgba(242, 237, 224, 0.7);
+}
+
+.footer-col h5 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.28em;
+  color: var(--vermillion);
+  margin-bottom: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 8px;
+}
+.footer-col h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 1px;
+  background: var(--vermillion);
+}
+.footer-col ul { list-style: none; }
+.footer-col li {
+  font-size: 12.5px;
+  padding: 5px 0;
+  color: rgba(242, 237, 224, 0.75);
+  line-height: 1.7;
+}
+
+.footer-bottom {
+  max-width: var(--container);
+  margin: 24px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: rgba(242, 237, 224, 0.5);
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (min-width: 640px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}

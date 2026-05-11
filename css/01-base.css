@@ -1,0 +1,456 @@
+@charset "UTF-8";
+/* =====================================================
+   CHIKUDEN LABO ｜ 01-base.css  (v4 / Blueprint × Editorial)
+   ─────────────────────────────────────────────
+   ▼ コンセプト
+   建築設計図 ×  雑誌エディトリアル のハイブリッド
+   3色だけで構成：紙色 / インディゴ / 朱色
+   モバイルファースト・大胆な数字・寸法線・縦書き
+   ===================================================== */
+
+
+/* =====================================================
+   1. CSS変数（カラー & スペーシング）
+   ===================================================== */
+:root {
+  /* 3色構成 */
+  --paper:        #F2EDE0;   /* 紙色（クリーム）*/
+  --paper-warm:   #E8DFC9;   /* 紙色（濃いめ） */
+  --paper-light:  #F8F4E8;   /* 紙色（明るめ） */
+  --ink:          #0A1F3D;   /* インディゴ（製図ペン）*/
+  --ink-soft:     #1E3859;   /* インディゴ（やや薄）*/
+  --vermillion:   #D14B3A;   /* 朱色（建築判子）*/
+  --vermillion-d: #A83426;   /* 朱色（深）*/
+
+  /* テキスト */
+  --text-main:    #0A1F3D;
+  --text-sub:     #4A5870;
+  --text-mute:    #8A93A5;
+
+  /* 線 */
+  --line:         rgba(10, 31, 61, 0.12);
+  --line-mid:     rgba(10, 31, 61, 0.25);
+  --line-strong:  rgba(10, 31, 61, 0.5);
+
+  /* スペーシング */
+  --container: 1200px;
+  --gutter: 20px;
+  --section-py: 70px;
+}
+@media (min-width: 640px) {
+  :root { --gutter: 36px; --section-py: 100px; }
+}
+@media (min-width: 1024px) {
+  :root { --gutter: 56px; --section-py: 140px; }
+}
+
+
+/* =====================================================
+   2. リセット & base
+   ===================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background: var(--paper);
+  color: var(--text-main);
+  line-height: 1.85;
+  font-weight: 400;
+  font-size: 15px;
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  padding-bottom: 72px;
+
+  /* 紙のテクスチャ（極々薄）*/
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(10, 31, 61, 0.025) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+@media (min-width: 1024px) {
+  body { padding-bottom: 0; font-size: 15.5px; }
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+input, select, textarea { font-size: 16px; }
+
+::selection { background: var(--vermillion); color: var(--paper); }
+
+
+/* =====================================================
+   3. タイポグラフィ（編集者用クラス）
+   ───────────────────────────────────────────
+   ▼ 主要フォント
+   ・ Bodoni Moda  …英文ディスプレイ（雑誌の見出し感）
+   ・ Shippori Mincho B1 …和文ディスプレイ（極太明朝）
+   ・ JetBrains Mono …注釈・寸法（製図風）
+   ・ Cormorant Garamond …英文セリフ italic（添え書き）
+   ・ Noto Sans JP …本文
+   ===================================================== */
+.t-display-en {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+.t-display-jp {
+  font-family: 'Shippori Mincho B1', serif;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+.t-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.t-italic {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   4. コンテナ
+   ===================================================== */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  position: relative;
+}
+
+
+/* =====================================================
+   5. 建築設計図のグリッド背景（セクション内に敷く）
+   ───────────────────────────────────────────
+   ▼ class="blueprint-grid" でセクションに装飾
+   ===================================================== */
+.blueprint-grid {
+  position: relative;
+}
+.blueprint-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(10, 31, 61, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 31, 61, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+@media (min-width: 1024px) {
+  .blueprint-grid::before { background-size: 60px 60px; }
+}
+.blueprint-grid > * { position: relative; z-index: 1; }
+
+
+/* =====================================================
+   6. 製図風の装飾要素（utility classes）
+   ===================================================== */
+
+/* 十字マーク（隅に置く）*/
+.crosshair {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  color: var(--ink);
+  opacity: 0.45;
+}
+.crosshair::before, .crosshair::after {
+  content: '';
+  position: absolute;
+  background: currentColor;
+}
+.crosshair::before {
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+}
+.crosshair::after {
+  left: 0; right: 0;
+  top: 50%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+.crosshair.tl { top: 14px; left: 14px; }
+.crosshair.tr { top: 14px; right: 14px; }
+.crosshair.bl { bottom: 14px; left: 14px; }
+.crosshair.br { bottom: 14px; right: 14px; }
+
+/* 寸法線（横）*/
+.dim-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--ink);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.dim-line::before,
+.dim-line::after {
+  content: '';
+  display: inline-block;
+  height: 1px;
+  background: currentColor;
+}
+.dim-line::before { width: 12px; margin-right: 10px; }
+.dim-line::after { width: 36px; margin-left: 10px; }
+@media (min-width: 640px) {
+  .dim-line::after { width: 60px; }
+  .dim-line { font-size: 11px; }
+}
+
+/* 製図注釈ラベル "FIG.01" のような */
+.fig-label {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: var(--ink);
+  background: var(--paper-warm);
+  padding: 4px 10px;
+  border: 1px solid var(--ink);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* 縦書き（日本語）*/
+.vertical-jp {
+  writing-mode: vertical-rl;
+  font-family: 'Shippori Mincho B1', serif;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: 0.12em;
+}
+
+/* 「●」朱色の判子風マーカー */
+.stamp {
+  display: inline-block;
+  width: 10px; height: 10px;
+  background: var(--vermillion);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/* 朱色のハイライト下線 */
+.under-vermillion {
+  background: linear-gradient(180deg, transparent 65%, var(--vermillion) 65%, var(--vermillion) 90%, transparent 90%);
+  padding: 0 2px;
+}
+
+
+/* =====================================================
+   7. セクション共通
+   ===================================================== */
+section {
+  padding: var(--section-py) 0;
+  position: relative;
+}
+
+/* セクション番号（巨大化）*/
+.sect-number {
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  font-size: 120px;
+  line-height: 0.85;
+  color: var(--ink);
+  letter-spacing: -0.04em;
+  display: inline-block;
+}
+@media (min-width: 640px) {
+  .sect-number { font-size: 180px; }
+}
+@media (min-width: 1024px) {
+  .sect-number { font-size: 260px; }
+}
+.sect-number .accent { color: var(--vermillion); }
+
+/* セクションタイトル（編集者風）*/
+.sect-title {
+  font-family: 'Shippori Mincho B1', serif;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.45;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  margin: 20px 0 18px;
+}
+.sect-title .accent { color: var(--vermillion); }
+.sect-title em { font-style: normal; color: var(--vermillion); }
+@media (min-width: 640px) {
+  .sect-title { font-size: 38px; margin: 24px 0 22px; }
+}
+@media (min-width: 1024px) {
+  .sect-title { font-size: 56px; line-height: 1.4; }
+}
+
+/* セクションのリード文 */
+.sect-lead {
+  font-size: 14.5px;
+  line-height: 2;
+  color: var(--text-sub);
+  max-width: 640px;
+}
+@media (min-width: 640px) {
+  .sect-lead { font-size: 15.5px; }
+}
+
+
+/* =====================================================
+   8. ボタン
+   ===================================================== */
+.btn-primary {
+  background: var(--vermillion);
+  color: var(--paper);
+  padding: 18px 32px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 700;
+  font-size: 14.5px;
+  letter-spacing: 0.15em;
+  border: none;
+  cursor: pointer;
+  transition: all .25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  min-height: 60px;
+  position: relative;
+}
+.btn-primary::after {
+  content: '→';
+  font-family: 'Bodoni Moda', serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.btn-primary:hover { background: var(--vermillion-d); }
+@media (min-width: 640px) {
+  .btn-primary { width: auto; padding: 20px 40px; font-size: 15px; }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  padding: 18px 30px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  border: 1.5px solid var(--ink);
+  cursor: pointer;
+  transition: all .25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 60px;
+}
+.btn-secondary:hover { background: var(--ink); color: var(--paper); }
+@media (min-width: 640px) {
+  .btn-secondary { width: auto; padding: 18px 36px; }
+}
+
+
+/* =====================================================
+   9. WebPプレースホルダー（差し替え用）
+   ===================================================== */
+.webp {
+  position: relative;
+  width: 100%;
+  background:
+    linear-gradient(135deg, var(--paper-warm) 0%, var(--paper-light) 100%);
+  border: 1px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 18px;
+  color: var(--ink);
+  overflow: hidden;
+}
+.webp::before {
+  content: 'WEBP';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.3em;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3px 8px;
+  font-weight: 600;
+}
+.webp::after {
+  content: '+';
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  color: var(--vermillion);
+  font-size: 16px;
+  font-weight: 700;
+}
+.webp .webp-icon {
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 12px;
+}
+.webp .webp-icon::after {
+  content: '';
+  width: 14px; height: 14px;
+  background: var(--ink);
+  clip-path: polygon(0 100%, 35% 55%, 60% 75%, 100% 25%, 100% 100%);
+}
+.webp .webp-desc {
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.55;
+  max-width: 85%;
+  color: var(--ink);
+}
+.webp .webp-sub {
+  margin-top: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  color: var(--vermillion);
+  font-weight: 600;
+}
+
+.webp[data-aspect="16/9"] { aspect-ratio: 16/9; }
+.webp[data-aspect="4/3"]  { aspect-ratio: 4/3; }
+.webp[data-aspect="1/1"]  { aspect-ratio: 1/1; }
+.webp[data-aspect="3/4"]  { aspect-ratio: 3/4; }
+.webp[data-aspect="3/2"]  { aspect-ratio: 3/2; }
+.webp[data-aspect="2/1"]  { aspect-ratio: 2/1; }
+.webp[data-aspect="21/9"] { aspect-ratio: 21/9; }
+
+
+/* =====================================================
+   10. revealアニメーション
+   ===================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
