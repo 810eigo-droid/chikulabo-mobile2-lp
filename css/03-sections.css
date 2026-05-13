@@ -2732,3 +2732,8 @@ section,
   top: 12px !important;
   z-index: 999 !important;
 }
+
+/* お問合せボタンのジャンプ先（3カードの真上に余裕を持たせる） */
+#contact-options {
+  scroll-margin-top: 40px;
+}
