@@ -21,10 +21,10 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid var(--ink);
-  min-height: 44px;
+  min-height: 46px;
 }
 @media (min-width: 640px) {
-  .topbar { padding: 12px var(--gutter); min-height: 60px; }
+  .topbar { padding: 12px var(--gutter); min-height: 64px; }
 }
 
 .topbar .brand {
@@ -35,15 +35,15 @@
 .topbar .brand-main {
   font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
-  letter-spacing: 0.1em;
-  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-size: 15px;
   color: var(--ink);
 }
 .topbar .brand-main .v { color: var(--vermillion); }
 .topbar .brand-sub {
   display: none;
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 10px;
+  font-size: 15px;
   color: var(--ink);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -71,12 +71,12 @@
     font-weight: 700;
     color: var(--ink);
     letter-spacing: 0.04em;
-    font-size: 13px;
+    font-size: 19px;
   }
   .topbar .contact-tel small {
     display: block;
     font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-size: 9.5px;
+    font-size: 14px;
     letter-spacing: 0.18em;
     color: var(--text-sub);
     text-align: right;
@@ -88,19 +88,20 @@
 .topbar .btn-cta {
   background: var(--ink);
   color: var(--paper);
-  padding: 7px 14px;
-  font-size: 11px;
+  padding: 6px 12px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   border: none;
   cursor: pointer;
   transition: background .25s ease;
-  min-height: 30px;
-  font-family: 'Noto Sans JP', sans-serif;
+  min-height: 32px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  white-space: nowrap;
 }
 .topbar .btn-cta:hover { background: var(--vermillion); }
 @media (min-width: 640px) {
-  .topbar .btn-cta { padding: 10px 22px; font-size: 13px; letter-spacing: 0.1em; min-height: 38px; }
+  .topbar .btn-cta { padding: 10px 22px; font-size: 17px; letter-spacing: 0.08em; min-height: 42px; }
 }
 
 /* =====================================================
@@ -124,18 +125,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 8px 8px;
+  padding: 4px 6px;
   color: var(--paper);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 12px;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  min-height: 46px;
+  letter-spacing: 0.04em;
+  min-height: 44px;
   background: var(--ink);
   transition: background .2s;
   text-align: center;
-  line-height: 1.3;
-  gap: 6px;
+  line-height: 1.25;
+  gap: 5px;
+  white-space: nowrap;
 }
 .mobile-cta-bar a:active { background: var(--ink-soft); }
 .mobile-cta-bar a.tel-btn {
@@ -146,7 +148,7 @@
 }
 .mobile-cta-bar a.contact-btn:active { background: var(--vermillion-d); }
 .mobile-cta-bar .icon {
-  font-size: 14px;
+  font-size: 13px;
   display: inline-block;
   margin: 0;
 }
@@ -210,21 +212,21 @@ footer::after {
 .footer-brand .latin .v { color: var(--vermillion); }
 .footer-brand .sub {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 10.5px;
+  font-size: 16px;
   letter-spacing: 0.22em;
   color: rgba(242, 237, 224, 0.6);
   margin-bottom: 16px;
   text-transform: uppercase;
 }
 .footer-brand p {
-  font-size: 12.5px;
+  font-size: 18px;
   line-height: 1.95;
   color: rgba(242, 237, 224, 0.7);
 }
 
 .footer-col h5 {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 10.5px;
+  font-size: 16px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
   margin-bottom: 14px;
@@ -244,7 +246,7 @@ footer::after {
 }
 .footer-col ul { list-style: none; }
 .footer-col li {
-  font-size: 12.5px;
+  font-size: 18px;
   padding: 5px 0;
   color: rgba(242, 237, 224, 0.75);
   line-height: 1.7;
@@ -257,7 +259,7 @@ footer::after {
   flex-direction: column;
   gap: 6px;
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-size: 10px;
+  font-size: 15px;
   color: rgba(242, 237, 224, 0.5);
   letter-spacing: 0.1em;
   text-align: center;
@@ -268,5 +270,82 @@ footer::after {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
+  }
+}
+
+
+/* =====================================================
+   4. TOP に戻るボタン（フローティング）
+   ───────────────────────────────────────
+   ・スクロール 300px 以上で表示
+   ・スマホ：mobile-cta-bar の上に配置
+   ・PC：右下固定
+   ===================================================== */
+.back-to-top {
+  position: fixed;
+  right: 14px;
+  bottom: 56px;   /* mobile-cta-bar(44px) + 余白12px */
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--vermillion);
+  color: var(--paper);
+  border: 2px solid var(--paper);
+  font-size: 20px;
+  font-weight: 800;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  cursor: pointer;
+  z-index: 98;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .3s ease, visibility .3s, transform .3s ease, background .25s;
+  box-shadow: 0 4px 12px rgba(10, 31, 61, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--vermillion-d);
+}
+.back-to-top:active {
+  transform: translateY(2px) scale(0.96);
+}
+.back-to-top .arrow {
+  display: inline-block;
+  font-size: 22px;
+  line-height: 1;
+  margin-top: -2px;
+}
+.back-to-top .label {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .back-to-top {
+    right: 28px;
+    bottom: 28px;
+    width: 56px;
+    height: 56px;
+    flex-direction: column;
+    gap: 0;
+  }
+  .back-to-top .arrow { font-size: 20px; margin-top: 0; }
+  .back-to-top .label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+  .back-to-top:hover {
+    transform: translateY(-4px);
   }
 }

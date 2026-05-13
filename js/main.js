@@ -1,7 +1,7 @@
 /* =====================================================
-   CHIKUDEN LABO ｜ main.js  (v4 / Blueprint × Editorial)
+   CHIKUDEN LABO ｜ main.js  (v5 / Phase 2)
    ─────────────────────────────────────────────
-   ・スクロール演出（reveal）
+   ・スクロール演出（reveal + anim-*）
    ・問合せフォーム送信（mailto:方式）
    ─────────────────────────────────────────────
    ▼ フォームの送信先メールアドレスは下記 CONTACT_EMAIL を変更
@@ -10,7 +10,7 @@
 const CONTACT_EMAIL = 'info@chikulabo.jp';
 
 
-/* スクロール演出 */
+/* スクロール演出（reveal + 全 anim-* クラスを検知） */
 (function initRevealAnimation() {
   if (!('IntersectionObserver' in window)) return;
 
@@ -26,7 +26,16 @@ const CONTACT_EMAIL = 'info@chikulabo.jp';
     rootMargin: '0px 0px -30px 0px'
   });
 
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // 既存の .reveal + 新しい anim-* クラス全種を監視
+  const selectors = [
+    '.reveal',
+    '.anim-slide-left', '.anim-slide-right',
+    '.anim-slide-up', '.anim-slide-down',
+    '.anim-pop', '.anim-spin',
+    '.anim-bounce', '.anim-fade', '.anim-flip'
+  ].join(', ');
+  
+  document.querySelectorAll(selectors).forEach(el => io.observe(el));
 })();
 
 
@@ -77,6 +86,34 @@ function scrollToElement(id) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+
+/* TOPに戻るボタン */
+(function initBackToTop() {
+  const btn = document.querySelector('.back-to-top');
+  if (!btn) return;
+
+  // スクロール検知（throttle で軽量化）
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 300) {
+          btn.classList.add('show');
+        } else {
+          btn.classList.remove('show');
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // クリックでスムーズスクロール
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
 
 
 /* 初期化 */
