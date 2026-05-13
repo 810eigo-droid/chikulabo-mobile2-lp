@@ -33,7 +33,7 @@
   gap: 10px;
 }
 .topbar .brand-main {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   letter-spacing: 0.1em;
   font-size: 13px;
@@ -42,7 +42,7 @@
 .topbar .brand-main .v { color: var(--vermillion); }
 .topbar .brand-sub {
   display: none;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   color: var(--ink);
   letter-spacing: 0.2em;
@@ -67,7 +67,7 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    font-family: 'Bodoni Moda', serif;
+    font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
     font-weight: 700;
     color: var(--ink);
     letter-spacing: 0.04em;
@@ -75,7 +75,7 @@
   }
   .topbar .contact-tel small {
     display: block;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
     font-size: 9.5px;
     letter-spacing: 0.18em;
     color: var(--text-sub);
@@ -200,7 +200,7 @@ footer::after {
 }
 
 .footer-brand .latin {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 26px;
   letter-spacing: 0.12em;
   margin-bottom: 4px;
@@ -209,7 +209,7 @@ footer::after {
 }
 .footer-brand .latin .v { color: var(--vermillion); }
 .footer-brand .sub {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10.5px;
   letter-spacing: 0.22em;
   color: rgba(242, 237, 224, 0.6);
@@ -223,7 +223,7 @@ footer::after {
 }
 
 .footer-col h5 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10.5px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -256,7 +256,7 @@ footer::after {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   color: rgba(242, 237, 224, 0.5);
   letter-spacing: 0.1em;

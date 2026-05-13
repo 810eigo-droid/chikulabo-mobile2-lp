@@ -13,39 +13,19 @@
    1. CSS変数（カラー & スペーシング）
    ===================================================== */
 :root {
-  /* ▼ v5 漫画エディトリアル・カラーパレット */
-  --paper:        #F2EDE0;   /* 紙色クリーム（継続）*/
-  --paper-warm:   #E8DFC9;
-  --paper-light:  #F8F4E8;
+  /* 3色構成 */
+  --paper:        #F2EDE0;   /* 紙色（クリーム）*/
+  --paper-warm:   #E8DFC9;   /* 紙色（濃いめ） */
+  --paper-light:  #F8F4E8;   /* 紙色（明るめ） */
+  --ink:          #0A1F3D;   /* インディゴ（製図ペン）*/
+  --ink-soft:     #1E3859;   /* インディゴ（やや薄）*/
+  --vermillion:   #D14B3A;   /* 朱色（建築判子）*/
+  --vermillion-d: #A83426;   /* 朱色（深）*/
 
-  --ink:          #1F3A5F;   /* 紺藍（FV画像に合わせて少し明るく）*/
-  --ink-soft:     #2C4972;
-  --ink-deep:     #0A1F3D;   /* 旧インディゴ（罫線用）*/
-
-  --vermillion:   #8C2A2C;   /* 臙脂（旧朱色から変更：高級感）*/
-  --vermillion-d: #6B1F22;
-
-  --mustard:      #F2B632;   /* 山吹色（NEW：警告・ハイライト）*/
-  --mustard-soft: #F5C861;
-
-  --text-main:    #1F3A5F;
+  /* テキスト */
+  --text-main:    #0A1F3D;
   --text-sub:     #4A5870;
   --text-mute:    #8A93A5;
-
-  --line:         rgba(31, 58, 95, 0.15);
-  --line-mid:     rgba(31, 58, 95, 0.35);
-  --line-strong:  rgba(31, 58, 95, 0.6);
-
-  --container: 1200px;
-  --gutter: 20px;
-  --section-py: 70px;
-}
-@media (min-width: 640px) {
-  :root { --gutter: 36px; --section-py: 100px; }
-}
-@media (min-width: 1024px) {
-  :root { --gutter: 56px; --section-py: 140px; }
-}
 
   /* 線 */
   --line:         rgba(10, 31, 61, 0.12);
@@ -71,9 +51,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
-  /* （他のプロパティはそのまま）*/
-}
+  font-family: 'Noto Sans JP', sans-serif;
   background: var(--paper);
   color: var(--text-main);
   line-height: 1.85;
@@ -101,34 +79,34 @@ input, select, textarea { font-size: 16px; }
 
 
 /* =====================================================
-   3. タイポグラフィ（v5：漫画エディトリアル）
+   3. タイポグラフィ（v5 / 漫画エディトリアル）
+   ───────────────────────────────────────────
+   ▼ 主要フォント
+   ・ Dela Gothic One  …巨大数字・ロゴ（漫画タイトル風・極太）
+   ・ Zen Kaku Gothic New …見出し・本文（読みやすさ・親しみ）
+   ・ Zen Maru Gothic …強調・吹き出し（やわらか丸ゴ）
    ===================================================== */
 .t-display-en {
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  line-height: 1;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
 }
 .t-display-jp {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.04em;
+  font-weight: 800;
+  letter-spacing: 0.02em;
   line-height: 1.4;
 }
 .t-mono {
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 .t-italic {
   font-family: 'Zen Maru Gothic', sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-.t-pop {
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-weight: 900;
-  letter-spacing: 0.04em;
+  font-style: italic;
+  font-weight: 500;
 }
 
 
@@ -208,7 +186,7 @@ input, select, textarea { font-size: 16px; }
   display: inline-flex;
   align-items: center;
   gap: 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.2em;
   color: var(--ink);
@@ -232,7 +210,7 @@ input, select, textarea { font-size: 16px; }
 /* 製図注釈ラベル "FIG.01" のような */
 .fig-label {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.22em;
   color: var(--ink);
@@ -246,7 +224,7 @@ input, select, textarea { font-size: 16px; }
 /* 縦書き（日本語）*/
 .vertical-jp {
   writing-mode: vertical-rl;
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 700;
   line-height: 1.7;
   letter-spacing: 0.12em;
@@ -278,7 +256,7 @@ section {
 
 /* セクション番号（巨大化）*/
 .sect-number {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 120px;
   line-height: 0.85;
@@ -296,7 +274,7 @@ section {
 
 /* セクションタイトル（編集者風）*/
 .sect-title {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 28px;
   line-height: 1.45;
@@ -349,7 +327,7 @@ section {
 }
 .btn-primary::after {
   content: '→';
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 18px;
   font-weight: 600;
 }
@@ -405,7 +383,7 @@ section {
   position: absolute;
   top: 10px;
   left: 10px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.3em;
   background: var(--ink);
@@ -443,7 +421,7 @@ section {
 }
 .webp .webp-sub {
   margin-top: 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.18em;
   color: var(--vermillion);

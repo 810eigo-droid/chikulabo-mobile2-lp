@@ -48,14 +48,14 @@
   border-bottom: 1px solid var(--ink);
 }
 .hero-strip .left {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.22em;
   color: var(--ink);
   text-transform: uppercase;
 }
 .hero-strip .right {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.22em;
   color: var(--vermillion);
@@ -75,7 +75,7 @@
   margin-bottom: 28px;
 }
 .hero-brand .mark {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 38px;
   letter-spacing: 0.06em;
@@ -85,7 +85,7 @@
 }
 .hero-brand .mark .v { color: var(--vermillion); }
 .hero-brand .tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10.5px;
   letter-spacing: 0.25em;
   color: var(--ink);
@@ -117,7 +117,7 @@
 
 /* 巨大な見出し */
 .hero-headline {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 36px;
   line-height: 1.35;
@@ -145,7 +145,7 @@
   .hero-vertical {
     display: block;
     writing-mode: vertical-rl;
-    font-family: 'Shippori Mincho B1', serif;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
     font-weight: 700;
     font-size: 15px;
     letter-spacing: 0.2em;
@@ -167,7 +167,7 @@
   border-bottom: 1px solid var(--line-mid);
 }
 .hero-subline .label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.25em;
   color: var(--vermillion);
@@ -175,7 +175,7 @@
   text-transform: uppercase;
 }
 .hero-subline p {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 17px;
   line-height: 1.85;
   font-weight: 600;
@@ -193,7 +193,7 @@
   position: relative;
   padding: 0 0 0 26px;
   margin-bottom: 36px;
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 15px;
   line-height: 1.95;
   color: var(--ink);
@@ -204,7 +204,7 @@
   position: absolute;
   left: 0;
   top: -4px;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 36px;
   font-weight: 800;
   color: var(--vermillion);
@@ -242,7 +242,7 @@
 
 /* 巨大ナンバー */
 .hero-feature .feat-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 48px;
   font-weight: 800;
   letter-spacing: -0.04em;
@@ -257,7 +257,7 @@
 
 /* SPEED / COVERAGE ラベル */
 .hero-feature .feat-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.28em;
   color: var(--ink);
@@ -271,7 +271,7 @@
 
 /* タイトル */
 .hero-feature h3 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 18px;
   font-weight: 800;
   color: var(--ink);
@@ -333,7 +333,7 @@
   margin-top: 12px;
   display: flex;
   justify-content: space-between;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.2em;
   color: var(--ink);
@@ -373,7 +373,7 @@
   position: relative;
 }
 .target-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 100px;
   line-height: 0.85;
@@ -389,7 +389,7 @@
   .target-num { font-size: 220px; }
 }
 .target-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10.5px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -397,7 +397,7 @@
   text-transform: uppercase;
 }
 .target-question {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 28px;
   font-weight: 800;
   color: var(--ink);
@@ -413,7 +413,7 @@
 }
 .target-question::before {
   content: 'Q';
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   color: var(--vermillion);
   font-size: 0.85em;
@@ -470,7 +470,7 @@
   border-bottom: 1px dashed var(--line-mid);
 }
 .target-card .card-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 40px;
   color: var(--vermillion);
@@ -478,7 +478,7 @@
   letter-spacing: -0.03em;
 }
 .target-card .card-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9px;
   letter-spacing: 0.2em;
   color: var(--text-sub);
@@ -488,7 +488,7 @@
   margin-bottom: 16px;
 }
 .target-card h3 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 16.5px;
   font-weight: 800;
   color: var(--ink);
@@ -500,7 +500,7 @@
   align-items: center;
   gap: 8px;
   color: var(--vermillion);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 600;
   font-size: 10px;
   letter-spacing: 0.15em;
@@ -536,7 +536,7 @@
   position: relative;
 }
 .risks-header .num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 100px;
   line-height: 0.85;
@@ -553,7 +553,7 @@
 }
 
 .risks-headline {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 26px;
   font-weight: 800;
   color: var(--ink);
@@ -604,7 +604,7 @@
   margin-bottom: 16px;
 }
 .risk-card .risk-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 56px;
   line-height: 0.85;
@@ -613,7 +613,7 @@
   flex-shrink: 0;
 }
 .risk-card .risk-tag {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.22em;
   color: var(--ink);
@@ -624,7 +624,7 @@
   margin-bottom: 16px;
 }
 .risk-card h4 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 19px;
   font-weight: 800;
   color: var(--ink);
@@ -664,7 +664,7 @@
   font-weight: 700;
 }
 .impact-row .impact-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -672,7 +672,7 @@
   text-transform: uppercase;
 }
 .impact-row h3 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 22px;
   font-weight: 800;
   color: var(--paper);
@@ -693,7 +693,7 @@
   .impact-list { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 .impact-item .impact-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 32px;
   color: var(--vermillion);
@@ -701,7 +701,7 @@
   margin-bottom: 10px;
 }
 .impact-item h4 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 16.5px;
   color: var(--paper);
   font-weight: 800;
@@ -750,7 +750,7 @@
   z-index: 2;
 }
 .zero-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.3em;
   color: var(--paper);
@@ -759,7 +759,7 @@
   opacity: 0.85;
 }
 .zero-headline {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 24px;
   font-weight: 800;
   line-height: 1.5;
@@ -782,7 +782,7 @@
   flex-wrap: wrap;
 }
 .zero-big {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 150px;
   font-weight: 800;
   color: var(--paper);
@@ -790,7 +790,7 @@
   letter-spacing: -0.06em;
 }
 .zero-eq {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 60px;
   color: var(--ink);
   font-weight: 600;
@@ -821,7 +821,7 @@
   background: transparent;
 }
 .zero-labels .lbl .k {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.25em;
   color: var(--paper);
@@ -830,7 +830,7 @@
   text-transform: uppercase;
 }
 .zero-labels .lbl .v {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 17px;
   font-weight: 800;
   color: var(--paper);
@@ -843,7 +843,7 @@
 .zero-labels .lbl.risk .v { color: var(--paper); }
 
 .zero-message {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 15px;
   line-height: 2;
   max-width: 720px;
@@ -872,7 +872,7 @@
   margin-bottom: 40px;
 }
 .bcp-header .num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 100px;
   line-height: 0.85;
@@ -889,7 +889,7 @@
 }
 
 .bcp-title {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 28px;
   font-weight: 800;
   color: var(--ink);
@@ -926,7 +926,7 @@
   display: inline-block;
   background: var(--vermillion);
   color: var(--paper);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.28em;
   padding: 5px 12px;
@@ -935,7 +935,7 @@
   text-transform: uppercase;
 }
 .bcp-headline-box h3 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 19px;
   color: var(--paper);
   font-weight: 800;
@@ -964,7 +964,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.2em;
   color: var(--ink);
@@ -990,7 +990,7 @@
 }
 /* ドロップキャップ */
 .bcp-text p:first-child::first-letter {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 56px;
   float: left;
@@ -1012,7 +1012,7 @@
   border-left: 3px solid var(--vermillion);
 }
 .bcp-callout .label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -1021,7 +1021,7 @@
   text-transform: uppercase;
 }
 .bcp-callout h3 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 18px;
   color: var(--ink);
   margin-bottom: 14px;
@@ -1030,7 +1030,7 @@
 }
 .bcp-callout h3 .latin {
   display: block;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 11.5px;
   letter-spacing: 0.22em;
   color: var(--vermillion);
@@ -1059,14 +1059,14 @@
   position: absolute;
   top: -14px;
   left: 18px;
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 90px;
   color: var(--vermillion);
   font-weight: 800;
   line-height: 1;
 }
 .bcp-punch p {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 16px;
   line-height: 1.95;
   margin-bottom: 16px;
@@ -1110,7 +1110,7 @@
 
 .menu-header { margin-bottom: 50px; }
 .menu-header .num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 100px;
   line-height: 0.85;
@@ -1126,7 +1126,7 @@
   .menu-header .num { font-size: 220px; }
 }
 .menu-header .title {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 26px;
   font-weight: 800;
   color: var(--ink);
@@ -1134,7 +1134,7 @@
 }
 .menu-header .title .v { color: var(--vermillion); }
 .menu-header .meta {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.22em;
   color: var(--text-sub);
@@ -1152,7 +1152,7 @@
 .diag-block { margin-bottom: 60px; }
 .diag-block-head { margin-bottom: 28px; }
 .diag-block-head .label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10.5px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -1161,7 +1161,7 @@
   text-transform: uppercase;
 }
 .diag-block-head h3 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 22px;
   color: var(--ink);
   font-weight: 800;
@@ -1212,7 +1212,7 @@
 
 .diag-course .course-tier {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.25em;
   color: var(--vermillion);
@@ -1223,7 +1223,7 @@
   text-transform: uppercase;
 }
 .diag-course .price {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 56px;
   font-weight: 800;
   color: var(--ink);
@@ -1232,13 +1232,13 @@
   letter-spacing: -0.04em;
 }
 .diag-course .price .unit {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 18px;
   margin-left: 4px;
   font-weight: 800;
 }
 .diag-course .price-sub {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   color: var(--text-mute);
   margin-bottom: 16px;
@@ -1250,7 +1250,7 @@
 }
 
 .diag-course h4 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 16px;
   font-weight: 800;
   color: var(--ink);
@@ -1263,7 +1263,7 @@
   color: var(--text-sub);
 }
 .diag-course .scope {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   color: var(--vermillion);
   margin-top: 14px;
@@ -1290,7 +1290,7 @@
 /* プラン */
 .plans-header { margin: 60px 0 36px; }
 .plans-header .label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10.5px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -1299,7 +1299,7 @@
   text-transform: uppercase;
 }
 .plans-header .small-title {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 22px;
   color: var(--ink);
   font-weight: 800;
@@ -1342,7 +1342,7 @@
 }
 .plan .plan-tag {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.28em;
   background: var(--ink);
@@ -1357,7 +1357,7 @@
   color: var(--paper);
 }
 .plan .duration {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 64px;
   font-weight: 800;
   line-height: 0.9;
@@ -1365,20 +1365,20 @@
   letter-spacing: -0.05em;
 }
 .plan .duration .unit {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 22px;
   margin-left: 4px;
   font-weight: 800;
 }
 .plan .plan-name {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 18px;
   font-weight: 800;
   margin: 14px 0 6px;
   line-height: 1.4;
 }
 .plan .plan-price {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -1410,7 +1410,7 @@
   color: var(--vermillion);
   font-weight: 700;
   flex-shrink: 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 .plan.featured li::before { color: var(--paper); }
 
@@ -1444,7 +1444,7 @@
   .discount-section { padding: 44px 40px; }
 }
 .discount-section .ds-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -1452,7 +1452,7 @@
   text-transform: uppercase;
 }
 .discount-section h4 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 19px;
   color: var(--paper);
   font-weight: 800;
@@ -1484,7 +1484,7 @@
   padding: 18px;
 }
 .discount-card .plan-head {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 15px;
   font-weight: 800;
   color: var(--vermillion);
@@ -1504,18 +1504,18 @@
 .discount-card .row:last-child { border-bottom: none; }
 .discount-card .row .label {
   color: rgba(242, 237, 224, 0.7);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10.5px;
   letter-spacing: 0.05em;
 }
 .discount-card .row .val {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 700;
   color: var(--paper);
   font-size: 12.5px;
 }
 .discount-card .row .val small {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   opacity: 0.6;
   margin-left: 4px;
@@ -1549,14 +1549,14 @@
 }
 .discount-table th {
   background: rgba(242, 237, 224, 0.05);
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   color: var(--paper);
   letter-spacing: 0.04em;
 }
 .discount-table th small {
   display: block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   font-weight: 400;
   color: rgba(242, 237, 224, 0.6);
@@ -1574,13 +1574,13 @@
   color: var(--vermillion);
 }
 .discount-table td {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 700;
   color: var(--paper);
 }
 .discount-table td small {
   display: block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   color: rgba(242, 237, 224, 0.55);
   font-weight: 400;
@@ -1594,7 +1594,7 @@
 
 .plans-footer {
   margin-top: 28px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 11px;
   color: var(--text-sub);
   line-height: 1.8;
@@ -1624,7 +1624,7 @@
   margin-bottom: 40px;
 }
 .diff-header .num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 100px;
   line-height: 0.85;
@@ -1641,7 +1641,7 @@
 }
 
 .diff-title {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 28px;
   font-weight: 800;
   color: var(--ink);
@@ -1695,7 +1695,7 @@
   }
 }
 .diff-point .pt-num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 64px;
   font-weight: 800;
   color: var(--vermillion);
@@ -1704,7 +1704,7 @@
 }
 .diff-point .pt-num small {
   display: block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.25em;
   color: var(--ink);
@@ -1717,7 +1717,7 @@
   .diff-point .pt-num { font-size: 92px; }
 }
 .diff-point h3 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 19px;
   font-weight: 800;
   color: var(--ink);
@@ -1736,7 +1736,7 @@
 }
 .diff-point p strong { color: var(--ink); font-weight: 700; }
 .diff-point .note {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 11px;
   color: var(--text-mute);
   letter-spacing: 0.03em;
@@ -1780,7 +1780,7 @@
   position: absolute;
   top: 10px;
   right: 14px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 9px;
   letter-spacing: 0.22em;
   color: var(--vermillion);
@@ -1805,7 +1805,7 @@
   transform: rotate(-8deg);
 }
 .made-in-jp .badge .latin {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 11px;
   letter-spacing: 0.25em;
   margin-bottom: 6px;
@@ -1814,7 +1814,7 @@
   opacity: 0.85;
 }
 .made-in-jp .badge .ja {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 17px;
   font-weight: 800;
   line-height: 1.4;
@@ -1824,7 +1824,7 @@
   margin: 6px 0;
 }
 .made-in-jp .badge .sub {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 8.5px;
   letter-spacing: 0.18em;
   margin-top: 6px;
@@ -1855,7 +1855,7 @@
   position: relative;
 }
 .profile-header .num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 100px;
   line-height: 0.85;
@@ -1871,7 +1871,7 @@
   .profile-header .num { font-size: 220px; }
 }
 .profile-title {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 28px;
   font-weight: 800;
   color: var(--ink);
@@ -1926,7 +1926,7 @@
     top: 0;
     right: -42px;
     writing-mode: vertical-rl;
-    font-family: 'Shippori Mincho B1', serif;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
     font-weight: 800;
     font-size: 13px;
     letter-spacing: 0.15em;
@@ -1949,7 +1949,7 @@
   .profile-portrait .name-block { text-align: left; }
 }
 .profile-portrait .role {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.25em;
   color: var(--vermillion);
@@ -1958,14 +1958,14 @@
   text-transform: uppercase;
 }
 .profile-portrait .name {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 22px;
   font-weight: 800;
   color: var(--ink);
   margin-bottom: 4px;
 }
 .profile-portrait .name-en {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-size: 12.5px;
   letter-spacing: 0.18em;
   color: var(--text-sub);
@@ -1980,7 +1980,7 @@
   color: var(--text-sub);
 }
 .profile-body h3 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 19px;
   font-weight: 800;
   color: var(--ink);
@@ -2000,7 +2000,7 @@
 
 /* ドロップキャップ */
 .profile-body .lead-p::first-letter {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 52px;
   float: left;
@@ -2020,7 +2020,7 @@
   border-left: 3px solid var(--ink);
 }
 .credentials .cred-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -2043,7 +2043,7 @@
 .credentials li::before {
   content: '＋';
   color: var(--vermillion);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -2057,7 +2057,7 @@
   margin-top: 18px;
 }
 .awards .aw-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -2066,7 +2066,7 @@
   text-transform: uppercase;
 }
 .awards p {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 13.5px;
   line-height: 1.85;
   color: var(--paper);
@@ -2083,7 +2083,7 @@
   border-left: 3px solid var(--vermillion);
 }
 .committees .com-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -2102,7 +2102,7 @@
 .committees li:last-child { border-bottom: none; }
 .committees li .year {
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   color: var(--ink);
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -2137,7 +2137,7 @@
   margin-bottom: 44px;
 }
 .contact-header .num {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
   font-weight: 800;
   font-size: 100px;
   line-height: 0.85;
@@ -2153,7 +2153,7 @@
   .contact-header .num { font-size: 220px; }
 }
 .contact-header .title {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 28px;
   font-weight: 800;
   color: var(--paper);
@@ -2204,7 +2204,7 @@
   .cm { padding: 36px 28px; }
 }
 .cm .cm-latin {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -2213,14 +2213,14 @@
   text-transform: uppercase;
 }
 .cm .cm-name {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 20px;
   font-weight: 800;
   margin-bottom: 10px;
   color: var(--paper);
 }
 .cm .cm-sub {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 11px;
   color: rgba(242, 237, 224, 0.7);
   line-height: 1.85;
@@ -2249,7 +2249,7 @@
 }
 
 .contact-form-wrap .form-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.28em;
   color: var(--vermillion);
@@ -2257,7 +2257,7 @@
   text-transform: uppercase;
 }
 .contact-form-wrap h3 {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 22px;
   font-weight: 800;
   margin-bottom: 12px;
@@ -2285,7 +2285,7 @@
 
 .field label {
   display: block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   letter-spacing: 0.22em;
   color: var(--vermillion);
@@ -2328,7 +2328,7 @@
 
 .form-disclaimer {
   text-align: center;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
   font-size: 10px;
   color: rgba(242, 237, 224, 0.5);
   margin-top: 14px;
