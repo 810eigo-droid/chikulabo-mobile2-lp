@@ -2703,3 +2703,32 @@
   60%  { transform: scale(1.15) rotate(15deg); }
   100% { transform: scale(1) rotate(0); }
 }
+
+/* === 人気No.1吹き出しの上端切れ対策（v7-完全版） === */
+
+/* 親階層を全て overflow visible に解放 */
+section,
+.diag-block,
+.diag-courses,
+.diag-course {
+  overflow: visible !important;
+}
+
+/* グリッド上部に余白確保（吹き出しが収まる分） */
+.diag-courses {
+  padding-top: 48px !important;
+}
+
+/* 吹き出しを最前面に固定（他要素の上に確実に表示） */
+.popular-badge {
+  z-index: 100 !important;
+}
+
+/* === 人気No.1吹き出し 強制内側配置（確実版） === */
+.diag-course.featured {
+  padding-top: 55px !important;
+}
+.diag-course.featured .popular-badge {
+  top: 12px !important;
+  z-index: 999 !important;
+}
