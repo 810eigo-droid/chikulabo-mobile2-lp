@@ -582,6 +582,22 @@ section {
   50% { transform: scale(1.04); }
 }
 
+/* ブルブル震える（約10秒・登場時の不穏感演出） */
+.webp-shake {
+  animation: webpShake 0.35s ease-in-out 28;
+  transform-origin: center center;
+  animation-fill-mode: both;
+}
+@keyframes webpShake {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  20%  { transform: translate(-2px, 1px) rotate(-0.5deg); }
+  40%  { transform: translate(2px, -1px) rotate(0.5deg); }
+  60%  { transform: translate(-1px, 2px) rotate(-0.3deg); }
+  80%  { transform: translate(1px, -1px) rotate(0.4deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+
 /* ===== PCホバー時の動き ===== */
 @media (min-width: 1024px) and (hover: hover) {
   /* マウスオーバーで傾く（3D tilt） */
@@ -636,9 +652,9 @@ section {
     transform: none !important;
     transition: none !important;
   }
-  .webp-float, .webp-sway, .webp-rotate-slow, .webp-pulse {
-    animation: none !important;
-  }
+  .webp-float, .webp-sway, .webp-rotate-slow, .webp-pulse, .webp-shake {
+  animation: none !important;
+}
 }
 
 
