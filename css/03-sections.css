@@ -265,6 +265,32 @@
   }
 }
 
+/* 番号 + アイコン 横並びヘッダー */
+.hero-feature .feat-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+/* アイコン画像 */
+.hero-feature .feat-icon {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+  border: none;
+}
+@media (min-width: 640px) {
+  .hero-feature .feat-icon { width: 64px; height: 64px; }
+}
+@media (min-width: 1024px) {
+  .hero-feature .feat-icon { width: 72px; height: 72px; }
+}
+
 /* 巨大ナンバー */
 .hero-feature .feat-num {
   font-family: 'Dela Gothic One', 'Zen Kaku Gothic New', sans-serif;
@@ -273,7 +299,7 @@
   letter-spacing: -0.04em;
   color: var(--vermillion);
   line-height: 0.85;
-  margin-bottom: 6px;
+  margin-bottom: 0;
   display: block;
 }
 @media (min-width: 640px) {

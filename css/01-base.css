@@ -480,54 +480,54 @@ section {
 /* ===== 入場アニメーション 9種 ===== */
 .anim-slide-left {
   transform: translateX(-80px);
-  transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.22,.61,.36,1);
 }
 .anim-slide-left.in { opacity: 1; transform: translateX(0); }
 
 .anim-slide-right {
   transform: translateX(80px);
-  transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.22,.61,.36,1);
 }
 .anim-slide-right.in { opacity: 1; transform: translateX(0); }
 
 .anim-slide-up {
   transform: translateY(50px);
-  transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.22,.61,.36,1);
 }
 .anim-slide-up.in { opacity: 1; transform: translateY(0); }
 
 .anim-slide-down {
   transform: translateY(-50px);
-  transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.22,.61,.36,1);
 }
 .anim-slide-down.in { opacity: 1; transform: translateY(0); }
 
 .anim-pop {
   transform: scale(.5);
-  transition: opacity .5s ease, transform .6s cubic-bezier(.34,1.56,.64,1);
+  transition: opacity .35s ease, transform .4s cubic-bezier(.34,1.56,.64,1);
 }
 .anim-pop.in { opacity: 1; transform: scale(1); }
 
 .anim-spin {
   transform: rotate(-360deg) scale(.4);
-  transition: opacity .8s ease, transform 1.1s cubic-bezier(.34,1.3,.64,1);
+  transition: opacity .55s ease, transform .7s cubic-bezier(.34,1.3,.64,1);
 }
 .anim-spin.in { opacity: 1; transform: rotate(0) scale(1); }
 
 .anim-bounce {
   transform: translateY(-60px);
-  transition: opacity .5s ease, transform 1s cubic-bezier(.68,-.55,.27,1.55);
+  transition: opacity .35s ease, transform .65s cubic-bezier(.68,-.55,.27,1.55);
 }
 .anim-bounce.in { opacity: 1; transform: translateY(0); }
 
 .anim-fade {
-  transition: opacity 1s ease;
+  transition: opacity .55s ease;
 }
 .anim-fade.in { opacity: 1; }
 
 .anim-flip {
   transform: perspective(800px) rotateY(90deg);
-  transition: opacity .7s ease, transform .9s cubic-bezier(.22,.61,.36,1);
+  transition: opacity .45s ease, transform .6s cubic-bezier(.22,.61,.36,1);
 }
 .anim-flip.in { opacity: 1; transform: perspective(800px) rotateY(0); }
 
@@ -638,5 +638,98 @@ section {
   }
   .webp-float, .webp-sway, .webp-rotate-slow, .webp-pulse {
     animation: none !important;
+  }
+}
+
+
+/* =====================================================
+   15. 実画像（card-image）スタイル
+   ───────────────────────────────────────
+   ▼ WEBPプレースホルダーから差し替えた実画像用
+   ▼ アニメーションクラス（anim-*, webp-*）は維持される
+   ===================================================== */
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center;
+  background: var(--paper-light);
+  border: 1.5px solid var(--ink);
+  /* 画像読み込み中のレイアウトシフト防止 */
+}
+
+/* アスペクト比指定（data-aspect="X/Y" に対応） */
+.card-image[data-aspect="3/2"]  { aspect-ratio: 3/2; }
+.card-image[data-aspect="4/3"]  { aspect-ratio: 4/3; }
+.card-image[data-aspect="3/4"]  { aspect-ratio: 3/4; }
+.card-image[data-aspect="21/9"] { aspect-ratio: 21/9; }
+.card-image[data-aspect="1/1"]  { aspect-ratio: 1/1; }
+.card-image[data-aspect="16/9"] { aspect-ratio: 16/9; }
+.card-image[data-aspect="2/1"]  { aspect-ratio: 2/1; }
+
+
+/* =====================================================
+   16. 番号用 追加アニメーション（v5 / 派手化）
+   ───────────────────────────────────────
+   ▼ セクション番号や feat-num にバラエティ豊かな登場を
+   ===================================================== */
+
+/* 右回転（時計回り） */
+.anim-spin-right {
+  opacity: 0;
+  transform: rotate(360deg) scale(.4);
+  transition: opacity .55s ease, transform .7s cubic-bezier(.34,1.3,.64,1);
+  will-change: opacity, transform;
+}
+.anim-spin-right.in {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* 二回転（左） */
+.anim-spin-double {
+  opacity: 0;
+  transform: rotate(-720deg) scale(.3);
+  transition: opacity .65s ease, transform .95s cubic-bezier(.34,1.2,.64,1);
+  will-change: opacity, transform;
+}
+.anim-spin-double.in {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* 左斜めから傾いて登場 */
+.anim-tilt-in-left {
+  opacity: 0;
+  transform: translateX(-100px) rotate(-30deg) scale(.6);
+  transition: opacity .55s ease, transform .65s cubic-bezier(.22,.61,.36,1);
+  will-change: opacity, transform;
+}
+.anim-tilt-in-left.in {
+  opacity: 1;
+  transform: translateX(0) rotate(0) scale(1);
+}
+
+/* 右斜めから傾いて登場 */
+.anim-tilt-in-right {
+  opacity: 0;
+  transform: translateX(100px) rotate(30deg) scale(.6);
+  transition: opacity .55s ease, transform .65s cubic-bezier(.22,.61,.36,1);
+  will-change: opacity, transform;
+}
+.anim-tilt-in-right.in {
+  opacity: 1;
+  transform: translateX(0) rotate(0) scale(1);
+}
+
+/* prefers-reduced-motion 対応 */
+@media (prefers-reduced-motion: reduce) {
+  .anim-spin-right, .anim-spin-double,
+  .anim-tilt-in-left, .anim-tilt-in-right {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

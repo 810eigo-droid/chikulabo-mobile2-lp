@@ -22,8 +22,8 @@ const CONTACT_EMAIL = 'info@chikulabo.jp';
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -30px 0px'
+    threshold: 0.05,                      // 5%見えれば発火（敏感）
+    rootMargin: '0px 0px 100px 0px'       // 画面下より100px下で先回り検知
   });
 
   // 既存の .reveal + 新しい anim-* クラス全種を監視
@@ -32,6 +32,8 @@ const CONTACT_EMAIL = 'info@chikulabo.jp';
     '.anim-slide-left', '.anim-slide-right',
     '.anim-slide-up', '.anim-slide-down',
     '.anim-pop', '.anim-spin',
+    '.anim-spin-right', '.anim-spin-double',
+    '.anim-tilt-in-left', '.anim-tilt-in-right',
     '.anim-bounce', '.anim-fade', '.anim-flip'
   ].join(', ');
   
