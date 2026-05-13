@@ -765,12 +765,20 @@
     </div>
 
     <!-- フォーム -->
-    <form class="contact-form-wrap reveal" onsubmit="return false;">
+    <form id="contact-form" class="contact-form-wrap reveal"
+          action="https://api.web3forms.com/submit" method="POST">
+
+      <!-- Web3Forms 用の hidden フィールド -->
+      <input type="hidden" name="access_key" value="baea6ffc-9b19-4d47-b9b4-909d1b671c0c">
+      <input type="hidden" name="subject" value="【無料相談】CHIKUDEN LABO お問合せ">
+      <input type="hidden" name="from_name" value="CHIKUDEN LABO LP">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
       <div class="form-label">CONTACT FORM ／ 申込みフォーム</div>
       <h3>無料相談を申し込む</h3>
       <p class="form-note">
-        ※ 送信ボタンを押すと、ご利用中のメーラーが立ち上がります。<br>
-        内容をご確認のうえ、そのまま送信してください。
+        必要事項をご入力のうえ、送信ボタンを押してください。<br>
+        2営業日以内にご返信いたします。
       </p>
 
       <div class="form-grid">
@@ -805,8 +813,14 @@
         </div>
       </div>
 
-      <button type="submit" class="form-submit">無料相談を申し込む　→</button>
+      <button type="submit" class="form-submit">
+        <span class="btn-text">無料相談を申し込む　→</span>
+        <span class="btn-loading">送信中...</span>
+      </button>
       <p class="form-disclaimer">PRIVACY ／ ご入力の個人情報は、お問合せのご対応のためにのみ使用いたします。</p>
+
+      <!-- 送信結果表示 -->
+      <div class="form-result" id="form-result"></div>
     </form>
 
   </div>

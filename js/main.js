@@ -1,13 +1,12 @@
 /* =====================================================
-   CHIKUDEN LABO ｜ main.js  (v5 / Phase 2)
+   CHIKUDEN LABO ｜ main.js  (v5 / Phase 3 - Web3Forms)
    ─────────────────────────────────────────────
    ・スクロール演出（reveal + anim-*）
-   ・問合せフォーム送信（mailto:方式）
+   ・問合せフォーム送信（Web3Forms 経由・自動メール送信）
    ─────────────────────────────────────────────
-   ▼ フォームの送信先メールアドレスは下記 CONTACT_EMAIL を変更
+   ▼ Web3Forms ダッシュボード: https://app.web3forms.com/
+   ▼ API キーは index.html 内の hidden input で設定
    ===================================================== */
-
-const CONTACT_EMAIL = '810eigo@gmail.com';
 
 
 /* スクロール演出（reveal + 全 anim-* クラスを検知） */
@@ -22,11 +21,10 @@ const CONTACT_EMAIL = '810eigo@gmail.com';
       }
     });
   }, {
-    threshold: 0.05,                      // 5%見えれば発火（敏感）
-    rootMargin: '0px 0px 100px 0px'       // 画面下より100px下で先回り検知
+    threshold: 0.05,
+    rootMargin: '0px 0px 100px 0px'
   });
 
-  // 既存の .reveal + 新しい anim-* クラス全種を監視
   const selectors = [
     '.reveal',
     '.anim-slide-left', '.anim-slide-right',
@@ -38,50 +36,72 @@ const CONTACT_EMAIL = '810eigo@gmail.com';
     '.anim-stamp-in',
     '.anim-bounce', '.anim-fade', '.anim-flip'
   ].join(', ');
-  
+
   document.querySelectorAll(selectors).forEach(el => io.observe(el));
 })();
 
 
-/* フォーム送信（mailto:方式）*/
-function handleContactSubmit(event) {
+/* フォーム送信（Web3Forms 経由・非同期）*/
+async function handleContactSubmit(event) {
   event.preventDefault();
 
-  const form = document.querySelector('.contact-form-wrap');
+  const form = document.getElementById('contact-form');
   if (!form) return;
 
+  const submitBtn = form.querySelector('.form-submit');
+  const resultDiv = form.querySelector('#form-result');
+  const formGrid  = form.querySelector('.form-grid');
+  const formNote  = form.querySelector('.form-note');
+  const formDisclaimer = form.querySelector('.form-disclaimer');
+
+  // 必須チェック
   const name  = form.querySelector('[name="name"]').value.trim();
   const email = form.querySelector('[name="email"]').value.trim();
-  const tel   = form.querySelector('[name="tel"]').value.trim();
-  const plan  = form.querySelector('[name="plan"]').value;
-  const msg   = form.querySelector('[name="message"]').value.trim();
-
   if (!name || !email) {
     alert('お名前とメールアドレスは必須項目です。');
     return;
   }
 
-  const subject = `【無料相談】CHIKUDEN LABO お問合せ - ${name}様`;
-  const body = [
-    '以下の内容で無料相談を申し込みます。',
-    '',
-    '【お名前】　　 ' + name,
-    '【メール】　　 ' + email,
-    '【電話番号】 ' + (tel || '未入力'),
-    '【希望プラン】 ' + (plan || '未選択'),
-    '',
-    '【お問合せ内容】',
-    msg || '（内容未入力）',
-    '',
-    '---',
-    'このメールは CHIKUDEN LABO LP より自動作成されました。'
-  ].join('\n');
+  // 送信中状態
+  submitBtn.disabled = true;
+  submitBtn.classList.add('is-loading');
 
-  const mailtoUrl = `mailto:${CONTACT_EMAIL}`
-    + `?subject=${encodeURIComponent(subject)}`
-    + `&body=${encodeURIComponent(body)}`;
+  const formData = new FormData(form);
 
-  window.location.href = mailtoUrl;
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+    const data = await response.json();
+
+    if (data.success) {
+      // 送信成功
+      resultDiv.innerHTML =
+        '<div class="result-icon">✓</div>' +
+        '<h4>送信ありがとうございました！</h4>' +
+        '<p>2営業日以内にご返信いたします。<br>少々お待ちください。</p>';
+      resultDiv.classList.add('show', 'success');
+      // フォーム入力エリアを非表示に
+      if (formGrid) formGrid.style.display = 'none';
+      if (formNote) formNote.style.display = 'none';
+      if (formDisclaimer) formDisclaimer.style.display = 'none';
+      submitBtn.style.display = 'none';
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      throw new Error(data.message || '送信に失敗しました');
+    }
+  } catch (error) {
+    console.error('Form submit error:', error);
+    resultDiv.innerHTML =
+      '<h4>送信エラー</h4>' +
+      '<p>申し訳ございません、送信に失敗しました。<br>' +
+      'お手数ですが、お電話でお問い合わせください。</p>';
+    resultDiv.classList.add('show', 'error');
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('is-loading');
+  }
 }
 
 
@@ -97,7 +117,6 @@ function scrollToElement(id) {
   const btn = document.querySelector('.back-to-top');
   if (!btn) return;
 
-  // スクロール検知（throttle で軽量化）
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
@@ -113,7 +132,6 @@ function scrollToElement(id) {
     }
   }, { passive: true });
 
-  // クリックでスムーズスクロール
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
@@ -122,9 +140,9 @@ function scrollToElement(id) {
 
 /* 初期化 */
 document.addEventListener('DOMContentLoaded', function() {
-  const submitBtn = document.querySelector('.form-submit');
-  if (submitBtn) {
-    submitBtn.addEventListener('click', handleContactSubmit);
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', handleContactSubmit);
   }
   document.querySelectorAll('[data-scroll]').forEach(btn => {
     btn.addEventListener('click', (e) => {

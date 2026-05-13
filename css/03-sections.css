@@ -2586,3 +2586,120 @@
     transition: transform .4s ease !important;
   }
 }
+
+
+/* =====================================================
+   ★ お問合せフォーム送信状態スタイル（v5 / Web3Forms）
+   ───────────────────────────────────────
+   ・送信中ボタン：ローディング表示
+   ・送信成功：チェックマーク＋お礼メッセージ
+   ・送信エラー：エラーメッセージ
+   ===================================================== */
+
+/* 送信中ボタン状態 */
+.form-submit .btn-loading {
+  display: none;
+}
+.form-submit.is-loading {
+  opacity: 0.7;
+  cursor: wait;
+  pointer-events: none;
+}
+.form-submit.is-loading .btn-text {
+  display: none;
+}
+.form-submit.is-loading .btn-loading {
+  display: inline;
+}
+
+/* 送信結果表示エリア */
+.form-result {
+  display: none;
+  margin-top: 28px;
+  padding: 36px 28px;
+  border-radius: 8px;
+  text-align: center;
+  animation: formResultIn 0.6s cubic-bezier(.22, 1, .36, 1);
+}
+.form-result.show {
+  display: block;
+}
+
+/* 成功時 */
+.form-result.success {
+  background: var(--paper-warm);
+  border: 3px solid var(--ink);
+  box-shadow: 6px 6px 0 var(--mustard);
+}
+.form-result.success .result-icon {
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 50%;
+  font-size: 48px;
+  line-height: 72px;
+  font-weight: 900;
+  animation: iconPop 0.7s cubic-bezier(.34, 1.5, .64, 1);
+}
+.form-result.success h4 {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--ink);
+  margin: 0 0 14px;
+  line-height: 1.4;
+}
+.form-result.success p {
+  font-size: 16px;
+  color: var(--text-mute);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* エラー時 */
+.form-result.error {
+  background: rgba(140, 42, 44, 0.08);
+  border: 2.5px solid var(--vermillion);
+}
+.form-result.error h4 {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--vermillion);
+  margin: 0 0 12px;
+}
+.form-result.error p {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .form-result {
+    padding: 48px 36px;
+  }
+  .form-result.success h4 {
+    font-size: 26px;
+  }
+}
+
+/* アニメーション */
+@keyframes formResultIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes iconPop {
+  0%   { transform: scale(0) rotate(-180deg); }
+  60%  { transform: scale(1.15) rotate(15deg); }
+  100% { transform: scale(1) rotate(0); }
+}
